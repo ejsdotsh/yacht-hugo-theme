@@ -1,2 +1,3 @@
-# hugo-theme-yacht
+# yacht
+
 yet another custom hugo theme
