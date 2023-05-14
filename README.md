@@ -36,6 +36,16 @@ module:
     disable: false
 ```
 
+### getting BulmaCSS
+
+at present, BulmaCSS must be added as a git submodule:
+
+```txt
+cd assets
+git submodule add https://github.com/jgthms/bulma.git
+git commit -m "add Bulma"
+```
+
 ## references
 
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
