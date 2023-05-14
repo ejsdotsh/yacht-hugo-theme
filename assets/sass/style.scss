@@ -1,0 +1,8 @@
+
+@import "_color_palette";
+/* override Bulma colors */
+$primary: $base;
+
+
+@import "../bulma/bulma.sass";
+
