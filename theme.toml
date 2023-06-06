@@ -1,0 +1,12 @@
+name = "YACHT"
+license = "Mozilla-2.0"
+licenselink = "https://mozilla.org/MPL/2.0/"
+description = "YACHT Another Custom Hugo Theme"
+homepage = "https://github.com/ejsdotsh/yacht-hugo-theme"
+tags = ["blog", "minimal", "portfolio"]
+features = ["dark"]
+min_version = "0.87.0"
+
+[author]
+  name = "e.j. sahala (they/them)"
+  homepage = "https://ejs.sh"
