@@ -1,10 +1,12 @@
 # YACHT
 
-**YACHT** **A**nother **C**ustom **H**ugo **T**heme
+after spending a lot of time with other people's themes, i decided that i wanted to learn how to do it, and created my own theme.
 
-**YACHT** **A** **C**atppuccin **H**ugo **T**heme
+***YACHT*** ***A***nother ***C***ustom ***H***ugo ***T***heme
 
-**YACHT** is a recursively named, mobile-first, accessible, and responsive theme for the [Hugo][1] static site generator, using the [Catppuccin][2] color palette, and styled with [BulmaCSS][3].
+***YACHT*** ***A** ***C***atppuccin ***H***ugo ***T***heme
+
+***YACHT*** is a recursively named, mobile-first, accessible, and responsive theme for the [Hugo][1] static site generator, using the [Catppuccin][2] color palette, and styled with [BulmaCSS][3].
 
 ## under construction
 
