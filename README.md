@@ -1,49 +1,37 @@
 # YACHT
 
-**YACHT** **A**nother **C**ustom **H**ugo **T**heme
+after spending a lot of time with other people's themes, i decided that i wanted to learn how to do it, and created my own theme.
 
-**YACHT** **A** **C**atppuccin **H**ugo **T**heme
+***YACHT*** ***A***nother ***C***ustom ***H***ugo ***T***heme
 
-**YACHT** is a recursively named theme for [Hugo][1], using the [Catppuccin][2] color palette, and styled with
-[BulmaCSS][3].
+***YACHT*** ***A** ***C***atppuccin ***H***ugo ***T***heme
+
+***YACHT*** is a recursively named, mobile-first, accessible, and responsive theme for the [Hugo][1] static site generator, using the [Catppuccin][2] color palette, and styled with [BulmaCSS][3].
 
 ## under construction
 
-when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is
-what they meant...
+when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
 
 ## getting your own YACHT
 
-when it's been constructed, the preferred way of getting a **YACHT** for yourself is by using `Hugo modules` in
-
-`config.toml`:
+when it's been constructed, the preferred way of getting a **YACHT** for yourself is by using `Hugo modules` in `config.toml`:
 
 ```toml
-theme = "github.com/ejsdotsh/yacht"
+theme = "github.com/ejsdotsh/yacht-hugo-theme"
 
 [module]
   [[module.imports]]
-    path = "github.com/ejsdotsh/yacht"
+    path = "github.com/ejsdotsh/yacht-hugo-theme"
 ```
 
 or in `config.yaml`:
 
 ```yaml
-theme: "github.com/ejsdotsh/yacht"
+theme: "github.com/ejsdotsh/yacht-hugo-theme"
 module:
   imports:
-    path: "github.com/ejsdotsh/yacht"
+    path: "github.com/ejsdotsh/yacht-hugo-theme"
     disable: false
-```
-
-### getting BulmaCSS
-
-at present, BulmaCSS must be added as a git submodule:
-
-```txt
-cd assets
-git submodule add https://github.com/jgthms/bulma.git
-git commit -m "add Bulma"
 ```
 
 ## references
@@ -54,4 +42,3 @@ git commit -m "add Bulma"
 [1]: <https://gohugo.io> "Hugo"
 [2]: <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md> "Catppuccin Style Guide"
 [3]: <https://bulmaio> "BulmaCSS"
-
