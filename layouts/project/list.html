@@ -1,0 +1,53 @@
+{{ define "main" }}
+<section class="section">
+<div class="container">
+<section class="section">
+  <h2 class="title is-2 is-centered is-spaced">{{ .Title }}</h2>
+  <p class="subtitle is-4">
+  {{ .Content }}
+  </p>
+  </section>
+
+  <div class="columns is-vcentered">
+
+      {{/* <div class="column"> */}}
+      {{/* </div> */}}
+
+        {{/* {{ with .Site.GetPage "/oss.md" }} */}}
+          {{/* <div class="card"> */}}
+            {{/* <div class="card-content"> */}}
+              {{/* <h3 class="subtitle is-3"><a href="{{ .RelPermalink }}">{{ .Title }}</a><h3> */}}
+              {{/* <div class="content"> */}}
+                {{/* <p>{{ .Summary }}</p> */}}
+              {{/* </div> */}}
+          {{/* </div> */}}
+        {{/* {{ end }} */}}
+
+    {{ range .Pages }}
+    <div class="column">
+
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <a class="title is-4" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          </p> 
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>{{ .Summary }}</p>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <a href="#" class="card-footer-item">tags</a>
+          <a href="#" class="card-footer-item">go</a>
+          <a href="#" class="card-footer-item">here</a>
+        </footer>
+      </div>
+
+    </div>
+    {{ end }}
+
+  </div>
+</div>
+</section>
+{{ end }}
