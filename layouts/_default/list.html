@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<main id="main" aria-label="main">
+  <div class="container">
+    <h2 class="title is-2 is-spaced">{{ .Title }}</h2>
+
+    <div class="content">
+      {{ .Content }}
+
+      <ul>
+        {{ range .Pages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</main>
+
+{{ end }}

@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main aria-label="main">
+  <div class="container has-text-centered">
+    <div class="columns is-vcentered">
+
+      <div class="column is-5">
+        <figure class="image is-fluid">
+          <img src="{{ .Site.Params.profilePicture | relURL }}" alt="{{
+            .Site.Params.profilePictureAlt }}" width="auto" height="auto">
+        </figure>
+      </div>
+
+      <div class="column is-6 is-offset-1">
+        <section class="section">
+          <div class="container is-fluid">
+            {{ if .Site.Params.subTitle }}
+            <h3 class="subtitle is-3 is-spaced">{{ .Site.Params.subTitle }}</h3>
+            {{ end }}
+
+            <div class="content is-5">
+              <p>{{ .Content }}</p>
+            </div>
+
+            <a class="button is-medium is-info is-outlined" alt="contact">
+              contact
+            </a>
+
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+{{ end }}

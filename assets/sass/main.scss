@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// import a font from google
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700');
+
+// import initial variables from bulma
+@import "bulma/sass/utilities/initial-variables";
+@import "bulma/sass/utilities/functions";
+
+// import the configured palette
+@import "ctp/{{ .Site.Params.palette }}";
+
+// override Bulma colors
+$black: hsl(240, 23%, 9%) !default;
+$black-bis: hsl(240, 21%, 12%) !default;
+$black-ter: hsl(240, 21%, 15%) !default;
+
+$white: hsl(220, 23%, 95%) !default;
+$white-bis: hsl(220, 22%, 92%) !default;
+$white-ter: hsl(220, 21%, 89%) !default;
+
+$text-strong: $subtext0;
+$scheme-main: $base;
+$scheme-invert: findColorInvert($base);
+$scheme-main-bis: $overlay0;
+$link: $blue;
+$link-hover: $rosewater;
+$navbar-item-hover-color: $black;
+$navbar-item-hover-background-color: $rosewater;
+$menu-item-color: $link;
+$menu-item-hover-color: $black;
+$menu-item-hover-background-color: $rosewater;
+$active: $rosewater;
+
+$subtitle-color: $subtext1;
+// $info: $blue;
+// $color: $text;
+// $body: $text !default;
+$footer-background-color: $crust;
+$navbar-background-color: $mantle;
+// $navbar-box-shadow-color: $crust;
+
+$subtext0-invert: findColorInvert($subtext0);
+$subtext1-invert: findColorInvert($subtext1);
+// @import "bulma/sass/utilities/derived-variables";
+
+$card-header-background-color: $mantle;
+$card-footer-background-color: $crust;
+
+// $colors: map-merge($colors);
+
+@import "bulma/bulma.sass";

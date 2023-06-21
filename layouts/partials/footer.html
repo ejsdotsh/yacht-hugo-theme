@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="columns">
+
+    <div class="column">
+    <div class="content">
+      {{ partial "social.html" . }}
+    </div>
+    </div>
+
+    <div class="column">
+    <div class="content">
+      <p>{{ .Site.Params.description }}</p>
+      <br/>
+      <small>copyright: &copy {{ .Site.Params.copyrightFrom }}-{{now.Format "2006"}} {{ .Site.Params.author }}</small>
+    </div>
+    </div>
+
+    <div class="column">
+    <div class="content has-text-right">
+      <p class="subtitle is-4">powered by<br>
+        <a href="https://gohugo.io" alt="Hugo">
+          <img src="{{ "hugo-logo-wide.svg" | relURL }}" alt="Hugo" width="128" height="38">
+        </a>
+      </p>
+      <p class="subtitle is-4">themed with<br>
+        <a href="https://github.com/ejsdotsh/yacht">YACHT</a>
+      </p>
+    </div>
+    </div>
+
+  </div>
+</footer>

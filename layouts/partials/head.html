@@ -1,0 +1,56 @@
+  <!--meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    {{- if .Page.IsHome -}}
+      {{ .Site.Title }}
+    {{- else -}}
+      {{ .Site.Title }} -- {{ .Title }} 
+    {{- end -}}
+  </title>
+
+  <meta name="author" content="{{ .Site.Params.author }}">
+
+  <meta name="description" content="{{- with .Page.Description -}}{{ . }}
+    {{- else -}}
+      {{- .Site.Params.description -}}
+    {{- end -}}">
+
+  {{ with .Params.tags }}
+  <meta name="keywords" content="{{ delimit . ", "}}">
+  {{ end }}
+
+  {{ hugo.Generator }}
+
+  <!-- favicons -->
+  <link rel="manifest" href="{{ "favicons/site.webmanifest" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicons/apple-touch-icon.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicons/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
+
+  <!-- load font-awesome and bulma stylesheets -->
+  <!-- TODO load specific icons/fonts from config as imports in style.scss -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css">
+
+  {{ $template := resources.Get "sass/main.scss" }}
+  <!-- TODO set this as "production" -->
+  {{ $style := $template | resources.ExecuteAsTemplate "sass/main.scss" . | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+  <!-- TODO RelPermalink or Permalink -->
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+
+
+  {{ range .AlternativeOutputFormats }}
+  {{- $link := `<link rel="%s" type="%s" href="%s" title="%s">` -}}
+  {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
+
+  {{- if $.Page.IsHome -}}
+    {{ $title = $.Site.Title }}
+  {{- end -}}
+
+  {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
+  {{ end }}
+
+  <link rel="canonical" href="{{ .Permalink }}" />
