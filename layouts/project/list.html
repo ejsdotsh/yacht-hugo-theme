@@ -1,14 +1,14 @@
 {{ define "main" }}
 <section class="section">
-<div class="container">
-<section class="section">
-  <h2 class="title is-2 is-centered is-spaced">{{ .Title }}</h2>
-  <p class="subtitle is-4">
-  {{ .Content }}
-  </p>
-  </section>
-
-  <div class="columns is-vcentered">
+  <div class="columns is-vcentered is-multiline">
+    <div class="column is-12">
+      <section class="section">
+        <h2 class="title is-2 has-text-centered is-spaced">{{ .Title }}</h2>
+        <p class="subtitle is-4">
+        {{ .Content }}
+        </p>
+      </section>
+    </div>
 
       {{/* <div class="column"> */}}
       {{/* </div> */}}
@@ -24,7 +24,7 @@
         {{/* {{ end }} */}}
 
     {{ range .Pages }}
-    <div class="column">
+    <div class="column is-5-tablet is-5-desktop is-3-widescreen">
 
       <div class="card">
         <header class="card-header">
@@ -34,13 +34,20 @@
         </header>
         <div class="card-content">
           <div class="content">
-            <p>{{ .Summary }}</p>
+            {{ if .Params.status }}
+              <p class="subtitle is-6">status:</br>
+                {{ .Params.status }}
+              </p>
+            {{ end }}
+            <p>
+              {{ .Summary }}
+            </p>
           </div>
         </div>
         <footer class="card-footer">
-          <a href="#" class="card-footer-item">tags</a>
-          <a href="#" class="card-footer-item">go</a>
-          <a href="#" class="card-footer-item">here</a>
+          {{ range .Params.tech_used }}
+            <a href="#" class="card-footer-item">{{ . }}</a>
+          {{ end }}
         </footer>
       </div>
 

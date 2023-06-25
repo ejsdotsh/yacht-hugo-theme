@@ -15,11 +15,15 @@
         </ul>
       </nav>
     </div>
-
       
       <div class="column">
         <main aria-label="main">
         <h2 class="title is-2 is-spaced">{{ .Title }}</h2>
+        {{ if .Params.status}}
+        <h4 class="subtitle is-4">status:</br>
+          {{ .Params.status }}
+        </h4>
+        {{ end }}
 
         <div class="content is-5">
           {{ .Content }}
@@ -28,7 +32,9 @@
           <h3 class="subtitle is-4">tech used</h3>
           <ul>
             {{ range .Params.tech_used }}
-            <li>{{ . }}</li>
+            <li>
+              {{ . }}
+            </li>
             {{ end }}
           </ul>
         </div>

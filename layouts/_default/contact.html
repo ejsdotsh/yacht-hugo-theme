@@ -1,0 +1,63 @@
+{{ define "main" }}
+
+<div class="container has-text-centered">
+  <div class="columns is-8 is-variable">
+
+    <div class="column is-two-thirds has-text-left">
+      <h2 class="title is-2 is-spaced">{{ .Title }}</h2>
+
+      <p class="is-size-4">{{ .Content }}</p>
+      </br>
+
+      <div class="social-media">
+
+        {{ with .Site.Params.social }}
+          {{ range sort . "weight" }}
+            <a href="{{ .url | safeURL }}" class="button is-light is-medium" title="{{ .name }}">
+              <i class="{{ .icon }}" aria-hidden="true">
+                {{ .name }}
+              </i>
+            </a>
+          {{ end }}
+        {{ end }}
+
+      </div>
+    </div>
+
+    <div class="column is-one-third has-text-left">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+        <label for="name" class="label">name</label>
+          <input class="input is-medium" type="text" id="name" placeholder="name">
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="email" class="label">email</label>
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-medium" type="email" id="email" placeholder="email">
+          {{/* <span class="icon is-small is-left"> */}}
+            {{/* <i class="fas fa-envelope"></i> */}}
+          {{/* </span> */}}
+          {{/* <span class="icon is-small is-right"> */}}
+            {{/* <i class="fas fa-check"></i> */}}
+          {{/* </span> */}}
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="message" class="label">message</label>
+        <div class="control">
+          <textarea class="input is-medium" id="message" placeholder="not implemented"></textarea>
+        </div>
+      </div>
+
+      <div class="control">
+        <button type="submit" class="button is-link is-danger is-fullwidth has-text-weight-medium is-medium">not implemented</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ end }}

@@ -12,18 +12,16 @@
 
       <div class="column is-6 is-offset-1">
         <section class="section">
-          <div class="container is-fluid">
+          <div class="container">
             {{ if .Site.Params.subTitle }}
             <h3 class="subtitle is-3 is-spaced">{{ .Site.Params.subTitle }}</h3>
             {{ end }}
 
-            <div class="content is-5">
+            <div class="content has-text-left is-medium">
               <p>{{ .Content }}</p>
             </div>
 
-            <a class="button is-medium is-info is-outlined" alt="contact">
-              contact
-            </a>
+            <a href="contact/" class="button is-medium is-link is-outlined">contact me</a>
 
           </div>
         </section>

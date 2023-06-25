@@ -1,16 +1,15 @@
 {{ with .Site.Params.social }}
+<div class="social-media">
 <ul>
   {{ range sort . "weight" }}
-  <li><a
-        href="{{ .url | safeURL }}"
-        title="{{ .name }}"
-        >
-        <span class="icon is-small">
-          <i class="{{ .icon }}"></i>
-        </span>
-        {{ .name }}
+  <li><a href="{{ .url | safeURL }}" title="{{ .name }}">
+      <span class="icon is-small">
+        <i class="{{ .icon }}"></i>
+      </span>
+      {{ .name }}
       </a>
   </li>
   {{ end }}
 </ul>
+</div>
 {{ end }}
