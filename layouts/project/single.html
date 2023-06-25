@@ -26,8 +26,7 @@
         {{ end }}
 
         <div class="content is-5">
-          {{ .Content }}
-          <img alt="{{ .Params.alt_text }}" src="{{ .Params.image }}">
+          {{ if .Params.image }}<img alt="{{ .Params.alt_text }}" src="{{ .Params.image }}">{{ end }}
 
           <h3 class="subtitle is-4">tech used</h3>
           <ul>
@@ -37,6 +36,9 @@
             </li>
             {{ end }}
           </ul>
+
+          {{ .Content }}
+
         </div>
         </main>
       </div>
