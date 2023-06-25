@@ -2,7 +2,7 @@
 
     <div class="navbar-brand">
       <a class="navbar-item" href="{{ .Site.BaseURL }}">
-        <img src="{{ "yacht-logo.svg" | relURL }}" alt="{{ .Site.Title }}">
+        <img src="{{ .Site.Params.logoPicture | relURL }}" alt="{{ .Site.Title }}">
       </a>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
