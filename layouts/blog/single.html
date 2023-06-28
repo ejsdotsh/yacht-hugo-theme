@@ -8,7 +8,7 @@
         <p class="is-5">originally posted: {{ .Date.Format "2006-01-02" }}</p>
         <p class="is-5">reading time: approximately {{ math.Round (div (countwords .Content) 200.0) }} minutes</p>
         <p class="is-5">word count: {{ countwords .Content }}</p>
-        </br>
+        <br />
         <span class="tags">
           categories: 
           {{ range .Params.categories }}
@@ -29,17 +29,17 @@
         </div>
       </section>
 
-  <section class="section related">
-    {{ $related := .Site.RegularPages.Related . | first 5 }}
-    {{ with $related }}
-      <h3>related pages</h3>
-      <ul>
-        {{ range . }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-        {{ end }}
-      </ul>
-    {{ end }}
-  </section>
+    <section class="section related">
+      {{ $related := .Site.RegularPages.Related . | first 5 }}
+      {{ with $related }}
+        <h3>related pages</h3>
+        <ul>
+          {{ range . }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </section>
 
   </div>
 </main>
