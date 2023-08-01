@@ -1,0 +1,40 @@
+# modified Allowlisting gitignore
+# Ignore everything
+*
+
+!/.dockerignore
+!/.gitignore
+!/.gitkeep
+
+!LICENSE
+!VERSION
+!Makefile
+
+!README.md
+!theme.toml
+
+# hugo modules
+!go.sum
+!go.mod
+
+# npm & webpack
+!package*.json
+
+# theme components
+!archetypes/**
+!assets/**
+!layouts/**
+!static/**
+
+!exampleSite/**
+
+# one document directory to consolidate them all
+!docs/**/*.md
+
+# but not the above files in (sub)directories
+!*/
+
+# explicitly ignore experimentation and in-progress development
+exp/**
+node_modules/**
+public/**
