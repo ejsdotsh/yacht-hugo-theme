@@ -2,17 +2,19 @@
 
 ***under construction***
 
-after spending a lot of time with other people's themes, i decided that i wanted to learn how to do it, and started creating my own...but it needed a name. when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+after spending a lot of time with other people's themes, i decided that i wanted to learn how, and started creating my own... 
 
-***YACHT*** ***A***nother ***C***ustom ***H***ugo ***T***heme
-
-***YACHT*** is a recursively named, mobile-first, accessible, and responsive theme for the [Hugo][1] static site generator, using the [Catppuccin][2] color palette, and styled with [BulmaCSS][3].
+***YACHT*** is a recursively named theme for the [Hugo][1] static site generator, using the [Catppuccin][2] palette and styled with [BulmaCSS][3], that aims to be mobile-first, accessible, and responsive.
 
 ***under construction***
 
 ## getting your own YACHT
 
-when it's been constructed, the preferred way of getting a **YACHT** for yourself is by using `Hugo modules` in `config.toml`:
+when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+
+after it's been constructed, the preferred way of getting your own **YACHT** is by using `Hugo modules`
+
+in `config.toml`:
 
 ```toml
 theme = "github.com/ejsdotsh/yacht-hugo-theme"
