@@ -1,0 +1,30 @@
+{
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "@catppuccin/palette": "project",
+      "bulma": "project",
+      "webpack": "project",
+      "webpack-cli": "project"
+    }
+  },
+  "dependencies": {},
+  "description": "YACHT Another Custom Hugo Theme",
+  "devDependencies": {
+    "@catppuccin/palette": "github:catppuccin/palette",
+    "bulma": "^0.9.4",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "name": "YACHT",
+  "private": true,
+  "scripts": {
+    "build": "npm-run-all webpack hugo-build",
+    "dev": "npm-run-all webpack --parallel webpack-watch hugo-server",
+    "hugo-build": "hugo --cleanDestinationDir",
+    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../..",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch"
+  },
+  "version": "0.2.0"
+}
