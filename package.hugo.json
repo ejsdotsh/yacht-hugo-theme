@@ -1,6 +1,6 @@
 {
   "name": "YACHT",
-  "version": "0.2.0",
+  "version": "0.0.2",
   "description": "YACHT Another Custom Hugo Theme",
   "private": true,
   "scripts": {
@@ -14,8 +14,8 @@
   "dependencies": { },
   "devDependencies": {
     "@catppuccin/palette": "github:catppuccin/palette",
-    "bulma": "^0.9.4",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
+    "bulma": "^>0.9.4",
+    "webpack": "^>5.88.2",
+    "webpack-cli": "^>5.1.4"
   }
 }
