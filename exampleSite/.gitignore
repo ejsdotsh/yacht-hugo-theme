@@ -1,0 +1,12 @@
+*
+
+!*/
+
+!/.gitignore
+!*/**.yaml
+!archetypes/**
+!assets/**
+!config/**
+!content/**
+!static/**
+
