@@ -1,9 +1,4 @@
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
-/******/ (() => { // webpackBootstrap
-var __webpack_exports__ = {};
+'use strict'
 
-/******/ })()
-;
-/******/ })()
-;
+import axios from 'axios';
+import lunr from 'lunr';
