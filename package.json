@@ -1,44 +1,22 @@
 {
   "comments": {
-    "dependencies": {
-      "@catppuccin/palette": "project",
-      "bulma": "project",
-      "sass": "project"
-    },
+    "dependencies": {},
     "devDependencies": {
-      "@catppuccin/palette": "project",
-      "bulma": "project",
-      "npm-run-all": "project",
-      "sass": "project",
-      "webpack": "project",
-      "webpack-cli": "project"
+      "@catppuccin/palette": "project"
     }
   },
-  "dependencies": {
-    "@catppuccin/palette": "^0.2.0",
-    "bulma": "^1.0.1",
-    "sass": "^1.77.6"
-  },
+  "dependencies": {},
   "description": "YACHT Another Custom Hugo Theme",
   "devDependencies": {
-    "@catppuccin/palette": "^0.2.0",
-    "bulma": "^1.0.1",
-    "npm-run-all": "^4.1.5",
-    "sass": "^1.77.6",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4"
+    "@catppuccin/palette": "^0.2.0"
   },
   "name": "YACHT",
   "private": true,
   "scripts": {
-    "build": "npm-run-all webpack bulma-build hugo-build",
-    "bulma-build": "sass --load-path=node_modules assets/sass/main.scss assets/css/main.css",
-    "bulma-run": "build-bulma -- --watch",
-    "dev": "npm-run-all webpack --parallel webpack-watch bulma-build hugo-server",
+    "build": "hugo-build",
+    "dev": "hugo-server",
     "hugo-build": "hugo --cleanDestinationDir",
-    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../..",
-    "webpack": "webpack",
-    "webpack-watch": "webpack --watch"
+    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../.."
   },
-  "version": "0.0.10"
+  "version": "0.0.11"
 }

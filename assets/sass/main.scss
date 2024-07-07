@@ -1,6 +1,6 @@
-/* @charset "utf-8"; */
+@charset "utf-8";
 
-// Catppuccin v0.2.0 sass is also part of the npm package
+/* Catppuccin v0.2.0 sass is also part of the npm package */
 /* @use "@catppuccin/palette/scss/mocha"; */
 
 $flamingo: #f2cdcd;
@@ -52,52 +52,49 @@ $active: $rosewater;
 $link: $rosewater;
 $primary: $base;
 
-// import initial variables from bulma
-@use "bulma/sass" with ($family-sans-serif: '"Ubuntu", sans-serif',
-  $family-monospace: '"Ubuntu Mono", monospace',
-  $text: $text,
-  $text-weak: $subtext0,
-  /* $text-strong: $grey-darker, */
-  /* $scheme-main: $base, */
-  /* $scheme-main-bis: $surface0, */
-  /* $scheme-main-ter: $surface1, */
-  /* $scheme-invert: $text, */
-  /* $scheme-invert-bis: $subtext0, */
-  /* $scheme-invert-ter: $subtext1, */
+$family-sans-serif: '"Ubuntu", sans-serif';
+$family-monospace: '"Ubuntu Mono", monospace';
+$text: $text;
+$text-weak: $subtext0;
+/* $text-strong: $grey-darker, */
+/* $scheme-main: $base, */
+/* $scheme-main-bis: $surface0, */
+/* $scheme-main-ter: $surface1, */
+/* $scheme-invert: $text, */
+/* $scheme-invert-bis: $subtext0, */
+/* $scheme-invert-ter: $subtext1, */
 
-  /* $link-hover: $blue, */
-  /* $tag-color: $crust, */
-  /* $tag-background-color: $blue, */
-  /* $navbar-item-hover-color: $crust, */
-  /* $navbar-item-hover-background-color: $rosewater, */
-  /* $menu-item-color: $link, */
-  /* $menu-item-hover-color: $crust, */
-  /* $menu-item-hover-background-color: $rosewater, */
+/* $link-hover: $blue, */
+/* $tag-color: $crust, */
+/* $tag-background-color: $blue, */
+/* $navbar-item-hover-color: $crust, */
+/* $navbar-item-hover-background-color: $rosewater, */
+/* $menu-item-color: $link, */
+/* $menu-item-hover-color: $crust, */
+/* $menu-item-hover-background-color: $rosewater, */
 
-  /* $primary: $base, */
-  /* $subtitle-color: $subtext1, */
+/* $primary: $base, */
+/* $subtitle-color: $subtext1, */
 
-  /* $background: $base, */
+/* $background: $base, */
 
-  /* $dark: $crust, */
+/* $dark: $crust, */
 
-  /* $text-invert: $crust, */
-  /* $text-light: $subtext1, */
-  /* $text-strong: $subtext0 */
-  /* $code: $crust, */
+/* $text-invert: $crust, */
+/* $text-light: $subtext1, */
+/* $text-strong: $subtext0 */
+/* $code: $crust, */
 
-  /* // $info: $blue, */
-  /* // $color: $text, */
-  /* $body: $base, */
-  /* $background-color: $base, */
-  /* $footer-background-color: $crust, */
-  /* $navbar-background-color: $mantle, */
-  /* $navbar-box-shadow-color: $crust, */
+/* // $info: $blue, */
+/* // $color: $text, */
+/* $body: $base, */
+/* $background-color: $base, */
+/* $footer-background-color: $crust, */
+/* $navbar-background-color: $mantle, */
+/* $navbar-box-shadow-color: $crust, */
 
-  /* $card-header-background-color: $mantle, */
-  /* $card-footer-background-color: $crust, */
+/* $card-header-background-color: $mantle, */
+/* $card-footer-background-color: $crust, */
 
-);
-
-// import a font from google
+/* import a font from google */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
