@@ -12,6 +12,7 @@
 
 !README.md
 !theme.toml
+!hugo.toml
 
 # hugo modules
 !go.sum
@@ -20,6 +21,8 @@
 # npm & webpack
 !package*.json
 !webpack.config.js
+!postcss.config.js
+!tailwind.config.js
 
 # theme components
 !archetypes/**
@@ -39,3 +42,7 @@
 exp/**
 node_modules/**
 public/**
+package-lock.json
+.hugo_build.lock
+resources/
+hugo_stats.json

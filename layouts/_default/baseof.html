@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.LanguageCode | default " en-us" }}">
 
-  <head>
-    {{- partial "head.html" . -}}
-  </head>
+<head>
+  {{- partial "head.html" . -}}
+</head>
 
-  <body>
-    <section class="hero is-fullheight">
+<body>
+  <section class="hero is-fullheight">
 
-      <div class="hero-head">
-        {{- partial "nav-top.html" . -}}
-      </div>
+    <div class="hero-head">
+      {{- partial "nav-top.html" . -}}
+    </div>
 
-      <div class="hero-body">
-        {{- block "main" . -}}{{- end -}}
-      </div>
+    <div class="hero-body">
+      {{- block "main" . -}}{{- end -}}
+    </div>
 
-      <div class="hero-foot">
-        {{- partial "footer.html" . -}}
-      </div>
+    <div class="hero-foot">
+      {{- partial "footer.html" . -}}
+    </div>
 
-    </section>
-  </body>
+  </section>
+</body>
+
 </html>
