@@ -4,6 +4,7 @@
   "description": "YACHT Another Custom Hugo Theme",
   "private": true,
   "scripts": {
+    "style-build": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/yacht.css",
     "hugo-build": "hugo --cleanDestinationDir",
     "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../.."
   },
@@ -11,10 +12,6 @@
   "devDependencies": {
     "@catppuccin/tailwindcss": ">=0.1.6",
     "@tailwindcss/typography": ">=0.5.13",
-    "autoprefixer": ">=10.4.19",
-    "postcss-cli": ">=11.0.0",
-    "postcss-import": ">=16.1.0",
-    "postcss": ">=8.4.39",
     "tailwindcss": ">=3.4.4"
   }
 }

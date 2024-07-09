@@ -4,10 +4,6 @@
     "devDependencies": {
       "@catppuccin/tailwindcss": "project",
       "@tailwindcss/typography": "project",
-      "autoprefixer": "project",
-      "postcss": "project",
-      "postcss-cli": "project",
-      "postcss-import": "project",
       "tailwindcss": "project"
     }
   },
@@ -16,17 +12,14 @@
   "devDependencies": {
     "@catppuccin/tailwindcss": ">=0.1.6",
     "@tailwindcss/typography": ">=0.5.13",
-    "autoprefixer": ">=10.4.19",
-    "postcss": ">=8.4.39",
-    "postcss-cli": ">=11.0.0",
-    "postcss-import": ">=16.1.0",
     "tailwindcss": ">=3.4.4"
   },
   "name": "YACHT",
   "private": true,
   "scripts": {
     "hugo-build": "hugo --cleanDestinationDir",
-    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../.."
+    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../..",
+    "style-build": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/yacht.css"
   },
   "version": "0.0.11"
 }

@@ -19,7 +19,8 @@
 !go.mod
 
 # npm & webpack
-!package*.json
+!package.json
+!package.hugo.json
 !webpack.config.js
 !postcss.config.js
 !tailwind.config.js

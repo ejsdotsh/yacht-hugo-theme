@@ -3,7 +3,9 @@ module.exports = {
 	content: [
 		"./hugo_stats.json",
 		"./content/**/*.html",
-		"./layouts/**/*.html"
+	  "./content/**/*.md",
+	  "./layouts/**/*.html",
+	  "./layouts/**/*.md"
 	],
 	plugins: [
 		require('@tailwindcss/typography'),
