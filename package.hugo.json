@@ -4,14 +4,18 @@
   "description": "YACHT Another Custom Hugo Theme",
   "private": true,
   "scripts": {
-    "style-build": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/yacht.css",
-    "hugo-build": "hugo --cleanDestinationDir",
-    "hugo-server": "hugo server --disableFastRender -s exampleSite -t ../.."
+    "build-css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/yacht.css -m",
+    "build-hugo": "hugo --cleanDestinationDir --minify",
+    "build": "run-s build-*",
+    "dev:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/yacht.css -w",
+    "dev:hugo": "hugo server --cleanDestinationDir --disableFastRender --logLevel debug -s exampleSite",
+    "dev": "run-p dev:*"
   },
   "dependencies": {},
   "devDependencies": {
     "@catppuccin/tailwindcss": ">=0.1.6",
     "@tailwindcss/typography": ">=0.5.13",
-    "tailwindcss": ">=3.4.4"
+    "tailwindcss": ">=3.4.4",
+    "npm-run-all": ">=4.1.5"
   }
 }

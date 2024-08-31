@@ -12,6 +12,7 @@
 
 !README.md
 !theme.toml
+!config.yaml
 !hugo.toml
 
 # hugo modules
@@ -32,11 +33,13 @@
 !static/**
 
 !exampleSite/**
-
+exampleSite/resources/
+exampleSite/public/
+/
 # one document directory to consolidate them all
 !docs/**/*.md
 
-# but not the above files in (sub)directories
+# but allow the above files in (sub)directories
 !*/
 
 # explicitly ignore experimentation and in-progress development

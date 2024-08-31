@@ -1,6 +1,6 @@
-baseURL = "https://example.org"
+# baseURL = "https://example.org"
 
-disableKinds = ["page", "section", "taxonomy", "term"]
+# disableKinds = ["page", "section", "taxonomy", "term"]
 
 [module]
 [module.hugoVersion]
@@ -17,7 +17,7 @@ target = "assets/watching/hugo_stats.json"
 writeStats = true
 [[build.cachebusters]]
 source = "assets/watching/hugo_stats\\.json"
-target = "styles\\.css"
+target = "yacht\\.css"
 [[build.cachebusters]]
 source = "(postcss|tailwind)\\.config\\.js"
 target = "css"
