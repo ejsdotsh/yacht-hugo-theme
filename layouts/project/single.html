@@ -1,23 +1,23 @@
 {{ define "main" }}
-  <div class="container">
-    <div class="columns is-vcentered">
+<div class="max-w-md mx-auto bg-base">
+  <div class="columns is-vcentered">
 
     <div class="column is-3">
       <nav class="menu">
         <h3 class="title is-3 is-spaced menu-label">projects</h3>
         <ul class="menu-list">
-            {{/* {{ with .Site.GetPage "/oss.md" }} */}}
-              {{/* <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li> */}}
-            {{/* {{ end }} */}}
+          {{/* {{ with .Site.GetPage "/oss.md" }} */}}
+          {{/* <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li> */}}
+          {{/* {{ end }} */}}
           {{ range (where .Site.RegularPages "Type" "in" "projects").ByDate.Reverse }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
           {{ end }}
         </ul>
       </nav>
     </div>
-      
-      <div class="column">
-        <main aria-label="main">
+
+    <div class="column">
+      <main aria-label="main">
         <h2 class="title is-2 is-spaced">{{ .Title }}</h2>
         {{ if .Params.status}}
         <h4 class="subtitle is-4">status:<br />
@@ -40,9 +40,9 @@
           {{ .Content }}
 
         </div>
-        </main>
-      </div>
-
+      </main>
     </div>
+
   </div>
+</div>
 {{ end }}

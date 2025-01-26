@@ -1,5 +1,7 @@
 # YACHT Another Custom Hugo Theme
 
+when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+
 ***under construction***
 
 after spending a lot of time trying to customize other people's themes, i decided to create...
@@ -15,8 +17,6 @@ external dependencies.
 ***under construction***
 
 ## getting your own YACHT
-
-when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
 
 after it's been constructed, the preferred way of getting your own **YACHT** is by using `Hugo modules`
 
@@ -57,4 +57,3 @@ and then do other stuff
 
 [1]: <https://gohugo.io> "Hugo"
 [2]: <https://github.com/catppuccin/palette> "Catppuccin Palettes"
-[4]: <https://github.com/catppuccin/tailwindcss> "Catppuccin theme for Tailwind"
