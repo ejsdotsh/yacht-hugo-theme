@@ -1,0 +1,24 @@
+<head>
+  <!--meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    {{- if .Page.IsHome -}}
+    {{ .Site.Title }}
+    {{- else -}}
+    {{ .Site.Title }} -- {{ .Title }}
+    {{- end -}}
+  </title>
+
+  <meta name="author" content="{{ .Site.Params.author }}">
+
+  <meta name="description" content="{{- with .Page.Description -}}{{ . }}
+    {{- else -}}
+      {{- .Site.Params.description -}}
+    {{- end -}}">
+
+  <!--style-->
+  <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}">
+
+</head>

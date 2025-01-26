@@ -1,0 +1,35 @@
+.container {
+  margin: 0 auto;
+  width: 80%;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+nav, footer {
+  background-color: #6c7086;
+  color: #cdd6f4;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+nav > a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #cdd6f4;
+}
+
+@media only screen and (min-width: 768px) {
+  nav { flex-direction: row; }
+
+  .project-container { display: flex; }
+  
+  .project-container .project-list { width: 20%; }
+
+  .project-container .project { flex: 1; }
+}
+ 
