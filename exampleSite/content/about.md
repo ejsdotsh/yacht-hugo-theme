@@ -1,22 +1,30 @@
 ---
-title: "YACHT Another Custom Hugo Theme"
-date: 2023-01-18T20:02:12-08:00
+title: "about YACHT"
+date: 2025-01-26T10:52:34-08:00
 draft: false
 ---
 
+when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+
 ***under construction***
 
-after spending a lot of time with other people's themes, i decided that i wanted to learn how to do it, and created my own...but it needed a name. when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+after spending a lot of time trying to customize other people's themes, i decided to create...
 
-***YACHT*** ***A***nother ***C***ustom ***H***ugo ***T***heme
+***YACHT** **A**nother **C**ustom **H**ugo **T**heme*
 
-***YACHT*** is a recursively named, mobile-first, accessible, and responsive theme for the [Hugo][1] static site generator, using the [Catppuccin][2] color palette, and styled with [BulmaCSS][3].
+## what is YACHT
+
+***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the
+[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal
+external dependencies.
 
 ***under construction***
 
 ## getting your own YACHT
 
-when it's been constructed, the preferred way of getting a **YACHT** for yourself is by using `Hugo modules` in `config.toml`:
+after it's been constructed, the preferred way of getting your own **YACHT** is by using `Hugo modules`
+
+in `config.toml`:
 
 ```toml
 theme = "github.com/ejsdotsh/yacht-hugo-theme"
@@ -36,6 +44,16 @@ module:
     disable: false
 ```
 
+then run:
+
+```txt
+hugo mod get -u ./...
+```
+
+and then do other stuff
+
+***under construction***
+
 ## references
 
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
@@ -43,4 +61,3 @@ module:
 
 [1]: <https://gohugo.io> "Hugo"
 [2]: <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md> "Catppuccin Style Guide"
-[3]: <https://bulmaio> "BulmaCSS"
