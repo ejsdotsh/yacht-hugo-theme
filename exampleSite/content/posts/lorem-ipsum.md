@@ -6,11 +6,12 @@ month: "2025/01"
 author: "e.j. sahala (they/them)"
 draft: false
 summary: "ten paragraphs of lorem ipsum"
-categories: []
-series: []
+categories:
+- lorem ipsum
+series:
+- lorem ipsum
 tags:
-  - lorem ipsum
-
+- lorem ipsum
 ---
 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 
