@@ -14,6 +14,16 @@
       <h2>{{ .Title }}</h2>
 
       {{ .Content }}
+      <br>
+      <img alt="{{ .Params.alt_text }}" src="{{ .Params.image }}">
+      <br>
+
+      <h3>technologies used</h3>
+      <ul>
+        {{ range .Params.tech_used }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
     </section>
 
   </div>

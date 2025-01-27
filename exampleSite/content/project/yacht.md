@@ -1,7 +1,7 @@
 ---
 title: "YACHT"
 draft: false
-image: yacht-logo.svg
+image: "../../yacht-logo.svg"
 alt_text: "YACHT Another Custom Hugo Theme"
 summary: "YACHT is a punny and recursively named theme for the Hugo static site generator"
 status: "development"

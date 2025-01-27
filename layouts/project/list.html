@@ -12,6 +12,14 @@
           <dd>{{ .Summary }}</dd>
       </dl>
     </section>
+    <section class="project">
+      {{ with .Site.GetPage "/opensource.md" }}
+      <dl>
+        <dt><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3></dt>
+          <dd>{{ .Summary }}</dd>
+      </dl>
+      {{ end }}
+    </section>
     {{ end }}
   </section>
 
