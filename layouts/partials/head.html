@@ -3,13 +3,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    {{- if .Page.IsHome -}}
-      {{ .Site.Title }}
-    {{- else -}}
-      {{ .Site.Title }} -- {{ .Title }}
-    {{- end -}}
-  </title>
+  {{ with .Params.tags }}
+  <meta name="keywords" content="{{ delimit . " , "}}">
+  {{ end }}
+
+  {{ hugo.Generator }}
 
   <meta name="author" content="{{ .Site.Params.author }}">
 
@@ -20,7 +18,16 @@
       {{ .Site.Params.description }}
     {{- end -}}">
 
-  <!--style-->
+  <title>
+    {{- if .Page.IsHome -}}
+      {{ .Site.Title }}
+    {{- else -}}
+      {{ .Site.Title }} -- {{ .Title }}
+    {{- end -}}
+  </title>
+
+  <!-- load the yacht stylesheets -->
+  {{/* {{ partialCached "head/css.html" . }} */}}
   <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}">
 
   {{ range .AlternativeOutputFormats -}}
