@@ -1,5 +1,30 @@
-<header>
-  <h1>{{ .Site.Title }}</h1>
-</header>
+<nav class="bridge">
 
-  {{- partial "nav.html" . -}}
+  <!-- baseURL/Title -->
+  <a href="#" class="logo">
+    <h1>
+      <span class="yacht-name">YACHT</span>
+    </h1>
+  </a>
+
+  <!-- palette picker -->
+  <div class="palette-picker">
+    <input type="checkbox" class="checkbox" id="checkbox" />
+    <label for="checkbox" class="label">
+      <ion-icon name="partly-sunny-outline" class="sun"></ion-icon>
+      <ion-icon name="moon-outline" class="moon"></ion-icon>
+      <div class="switcher"></div>
+    </label>
+  </div>
+
+  <!-- navigation -->
+  {{- partial "navigation.html" . -}}
+  
+  <!-- hamburger -->
+  <div class="hamburger" id="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+
+</nav>

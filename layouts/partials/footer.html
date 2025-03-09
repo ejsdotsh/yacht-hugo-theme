@@ -1,5 +1,15 @@
-<footer>
+<footer class="anchor">
 
+  <section class="socials">
+    <ul>
+      <li>social 1</li>
+      <li>social 2</li>
+      <li>social 3</li>
+      <li>social 4</li>
+    </ul>
+  </section>
+
+  <section class="made-with">
   <p>powered by<br>
     <a href="https://gohugo.io">
     <img src="{{ "hugo-logo-wide.svg" | relURL }}" alt="Hugo" width="128" height="38">
@@ -10,7 +20,10 @@
     <img src="{{ "yacht-logo.svg" | relURL }}" alt="YACHT" width="128" height="38">
     </a>
   </p>
+  </section>
   
+  <section class="copyright">
   <small>copyright: &copy; {{ .Site.Params.copyrightFrom }}-{{now.Format "2006"}} {{ .Site.Params.author }}</small>
+  </section>
 
 </footer>

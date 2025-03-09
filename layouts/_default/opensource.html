@@ -1,20 +1,20 @@
 {{ define "main" }}
 
-  <h2>{{ .Title }}</h2>
-
+  <br>
   {{ .Content }}
+  <br>
 
   {{ $url := printf "%s?q=owner:%s&sort=updated" .Site.Params.gh_url .Site.Params.gh_user }}
   {{ $repos := dict }}
-  {{ with try (resources.GetRemote $url) }}
-    {{ with .Err }}
+  {{- with try (resources.GetRemote $url) }}
+    {{- with .Err }}
       {{ errorf "%s" . }}
-    {{ else with .Value }}
+    {{- else with .Value }}
       {{ $repos = .Content | transform.Unmarshal }}
-    {{ else }}
+    {{- else }}
       {{ errorf "unable to get remote resource %q" $url }}
-    {{ end }}
-  {{ end }}
+    {{- end }}
+  {{- end }}
 
   <section class="oss">
     {{ range $repos.items }}

@@ -16,20 +16,21 @@
       {{ . }}
     {{- else -}}
       {{ .Site.Params.description }}
-    {{- end -}}">
-
-  <title>
-    {{- if .Page.IsHome -}}
-      {{ .Site.Title }}
-    {{- else -}}
-      {{ .Site.Title }} -- {{ .Title }}
     {{- end -}}
-  </title>
+  ">
+
+  <!-- favicons -->
 
   <!-- load the yacht stylesheets -->
-  {{/* {{ partialCached "head/css.html" . }} */}}
+  {{- if eq hugo.Environment "development" }}
   <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}">
+  {{- else }}
+    {{- with . | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end }}
+  {{- end }}
 
+  <!-- render any configured/available alternate formats -->
   {{ range .AlternativeOutputFormats -}}
     {{- $link := `<link rel="%s" type="%s" href="%s" title="%s">` -}}
     {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
@@ -38,4 +39,14 @@
     {{- end -}}
     {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
   {{- end }}
+
+  <!-- page title -->
+  <title>
+    {{- if .Page.IsHome -}}
+      {{ .Site.Title }}
+    {{- else -}}
+      {{ .Site.Title }} -- {{ .Title }}
+    {{- end -}}
+  </title>
+
 </head>

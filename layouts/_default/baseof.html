@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
-
+<html lang="{{ or site.Language.LanguageCode | default "en-us" }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 
   {{- partial "head.html" . -}}
 
   <body>
-    <div class="container">
+    <div class="yacht">
 
     {{- partial "header.html" . -}}
 
       <main>
+        <section class="content">
       {{- block "main" .}}{{- end }}
+        </section>
       </main>
     
     {{- partial "footer.html" . -}}
