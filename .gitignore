@@ -5,6 +5,7 @@
 !/.dockerignore
 !/.gitignore
 !/.gitkeep
+!/.github
 
 !LICENSE
 !VERSION
