@@ -20,15 +20,21 @@
   ">
 
   <!-- favicons -->
+    <!-- generated with https://redketchup.io/favicon-generator -->
+  <link rel="manifest" href="{{ "favicons/site.webmanifest" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicons/apple-touch-icon.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicons/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
 
-  <!-- load the yacht stylesheets -->
-  {{- if eq hugo.Environment "development" }}
-  <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}">
-  {{- else }}
-    {{- with . | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ "css/yacht.css" | relURL }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-    {{- end }}
-  {{- end }}
+  <!-- load the yacht stylesheet(s) -->
+  {{- $css := resources.Get "css/yacht.css" | minify | fingerprint -}}
+  {{- if eq hugo.Environment "development" -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen">
+  {{- else -}}
+    {{- with . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{- end -}}
+  {{- end -}}
 
   <!-- render any configured/available alternate formats -->
   {{ range .AlternativeOutputFormats -}}

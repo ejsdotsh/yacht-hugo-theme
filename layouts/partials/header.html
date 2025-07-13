@@ -1,30 +1,44 @@
-<nav class="bridge">
+  <nav class="navbar">
 
   <!-- baseURL/Title -->
-  <a href="#" class="logo">
+  <a href="{{ .Site.BaseURL }}" class="logo">
     <h1>
-      <span class="yacht-name">YACHT</span>
+      <span class="header__yacht-name">{{ .Site.Title }}</span>
     </h1>
   </a>
 
+  {{/*
   <!-- palette picker -->
-  <div class="palette-picker">
-    <input type="checkbox" class="checkbox" id="checkbox" />
-    <label for="checkbox" class="label">
-      <ion-icon name="partly-sunny-outline" class="sun"></ion-icon>
-      <ion-icon name="moon-outline" class="moon"></ion-icon>
-      <div class="switcher"></div>
+  <div class="header__palette-picker">
+    <input type="checkbox" class="header__checkbox" id="checkbox" />
+    <label for="checkbox" class="header__label">
+      <ion-icon name="partly-sunny-outline" class="header__sun"></ion-icon>
+      <ion-icon name="moon-outline" class="header__moon"></ion-icon>
+      <div class="header__switcher"></div>
     </label>
   </div>
+  */}}
 
   <!-- navigation -->
-  {{- partial "navigation.html" . -}}
+{{/* <div class="navigation bridge" role="navigation" aria-label="main navigation"> */}}
+  <ul>
+    {{ range .Site.Menus.main }}
+    <li class="header__nav-item">
+      <a href="{{ .URL | relURL }}"
+        class="header__nav-link"
+        id="nav-link"
+        title="{{ .Name }}"
+      >{{- .Name -}}</a>
+    </li>
+    {{ end }}
+  </ul>
+  {{/* </div> */}}
   
   <!-- hamburger -->
-  <div class="hamburger" id="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+  <div class="header__hamburger" id="hamburger">
+    <span class="header__bar" aria-hidden="true"></span>
+    <span class="header__bar" aria-hidden="true"></span>
+    <span class="header__bar" aria-hidden="true"></span>
   </div>
 
 </nav>
