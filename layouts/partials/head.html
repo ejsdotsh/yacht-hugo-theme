@@ -28,7 +28,7 @@
 
   <!-- load the yacht stylesheet(s) -->
   {{- $css := resources.Get "css/yacht.css" | minify | fingerprint -}}
-  {{- if eq hugo.Environment "development" -}}
+  {{- if hugo.IsDevelopment -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen">
   {{- else -}}
     {{- with . | minify | fingerprint -}}

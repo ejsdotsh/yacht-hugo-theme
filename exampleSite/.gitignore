@@ -2,6 +2,9 @@
 
 !*/
 
+!go.mod
+!go.sum
+
 !/.gitignore
 !*/**.yaml
 !archetypes/**

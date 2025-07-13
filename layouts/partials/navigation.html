@@ -1,9 +1,0 @@
-<section class="navigation" role="navigation" aria-label="main navigation">
-  <ul>
-    {{ range .Site.Menus.main.ByWeight }}
-    <li class="nav-item">
-      <a class="nav-link" href="{{ .URL | relURL }}" id="nav-link" title="{{ .Name }}">{{ .Name }}</a>
-    </li>
-    {{ end }}
-  </ul>
-</section>

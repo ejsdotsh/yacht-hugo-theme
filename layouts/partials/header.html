@@ -22,7 +22,7 @@
   <!-- navigation -->
 {{/* <div class="navigation bridge" role="navigation" aria-label="main navigation"> */}}
   <ul>
-    {{ range .Site.Menus.main }}
+    {{ range .Site.Menus.main.ByWeight }}
     <li class="header__nav-item">
       <a href="{{ .URL | relURL }}"
         class="header__nav-link"
