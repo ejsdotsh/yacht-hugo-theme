@@ -1,0 +1,37 @@
+// colors based on Catppuccin Mocha
+$background-color: #1e1e2e !default;
+$font-color: #cdd6f4 !default;
+$secondary-color: #a6adc8 !default;
+$link-color: #89b4fa !default;
+$hover-color: #89dceb !default;
+$surface-color: #313244 !default;
+$shadow-color: #11111b !default;
+$active-border: #b4befe !default;
+$overlay2-color: #9399b2 !default;
+$yellow-color: #f9e2af !default;
+$lavendar-color: #b4befe !default;
+
+$overlay0: #6c7086 !default;
+$surface0: #313244 !default;
+
+// fonts
+$font-stack: Ubuntu, sans-serif;
+$normal-font: 400 !default;
+$bold-font: 600 !default;
+$bolder-font: 900 !default;
+
+// sizes
+$line-height: 1.2rem !default;
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+
+// Headings font size of the site.
+$global-headings: (
+  h1: 26px,
+  h2: 24px,
+  h3: 20px,
+  h4: 16px,
+  h5: 14px,
+  h6: 14px
+) !default;
