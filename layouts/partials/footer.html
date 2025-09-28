@@ -1,29 +1,40 @@
-<footer class="anchor">
+<div class="anchor">
 
-  <section class="socials">
+  <div class="socials">
     <ul>
       <li>social 1</li>
       <li>social 2</li>
       <li>social 3</li>
       <li>social 4</li>
     </ul>
-  </section>
+  </div>
 
-  <section class="made-with">
+  <div class="footer__made-with">
   <p>powered by<br>
     <a href="https://gohugo.io">
+    <svg>
     <img src="{{ "hugo-logo-wide.svg" | relURL }}" alt="Hugo" width="128" height="38">
+    </svg>
     </a>
   </p>
   <p>themed with<br>
     <a href="https://github.com/ejsdotsh/yacht">
+    <svg>
     <img src="{{ "yacht-logo.svg" | relURL }}" alt="YACHT" width="128" height="38">
+    </svg>
     </a>
   </p>
-  </section>
+  </div>
   
-  <section class="copyright">
+  <div class="copyright">
+  <div class="disclaimer">
+  <small>
+    all views expressed are my own; any and all art/artwork is copyright its respective owner (myself if not otherwise noted).
+  </small>
+  </div>
+  <div class="copyright">
   <small>copyright: &copy; {{ .Site.Params.copyrightFrom }}-{{now.Format "2006"}} {{ .Site.Params.author }}</small>
-  </section>
+  </div>
+  </div>
 
-</footer>
+</div>

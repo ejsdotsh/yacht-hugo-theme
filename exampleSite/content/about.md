@@ -15,8 +15,7 @@ after spending a lot of time trying to customize other people's themes, i decide
 ## what is YACHT
 
 ***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the
-[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal
-external dependencies.
+[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal external dependencies.
 
 ***under construction***
 

@@ -27,13 +27,17 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
 
   <!-- load the yacht stylesheet(s) -->
-  {{- $css := resources.Get "css/yacht.css" | minify | fingerprint -}}
-  {{- if hugo.IsDevelopment -}}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen">
-  {{- else -}}
-    {{- with . | minify | fingerprint -}}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" type="text/css" media="screen" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{- with resources.Get "scss/yacht.scss" -}}
+  {{- $opts := dict "transpiler" "libsass" "outputStyle" "expanded" "targetPath" "css/yacht.css" }}
+  {{- with . | toCSS $opts -}}
+    {{- if hugo.IsDevelopment -}}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" type="text/css" media="screen">
+    {{- else -}}
+      {{- with . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" type="text/css" media="screen" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+      {{- end -}}
     {{- end -}}
+  {{- end -}}
   {{- end -}}
 
   <!-- render any configured/available alternate formats -->
@@ -55,4 +59,7 @@
     {{- end -}}
   </title>
 
+  <script
+    src="https://code.jquery.com/jquery-latest.min.js">
+  </script>
 </head>

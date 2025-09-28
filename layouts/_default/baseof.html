@@ -4,19 +4,17 @@
   {{- partial "head.html" . -}}
 
   <body>
-    <div class="yacht">
+    <header class="header">
+      {{- partial "header.html" . -}}
+    </header>
 
-    {{- partial "header.html" . -}}
-
-      <main>
-        <section class="content">
+    <main class="main">
       {{- block "main" .}}{{- end }}
-        </section>
-      </main>
+    </main>
     
-    {{- partial "footer.html" . -}}
-
-    </div>
+    <footer class="footer">
+      {{- partial "footer.html" . -}}
+    </footer>
   </body>
 
 </html>

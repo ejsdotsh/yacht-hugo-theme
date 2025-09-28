@@ -1,18 +1,23 @@
 {{ define "main" }}
 
-  <div class="landing">
-
-    <div class="landing-image">
-      <img
-        src="img/landing.jpg"
-        alt="an image for the landing"
-        title="landing.jpg"
-      />
+  <div class="home-container">
+    <div class="landing-column landing-image">
+      <figure class="image">
+        <img
+          src="{{ .Site.Params.profilePicture | relURL }}"
+          alt="{{ .Site.Params.profilePictureAlt }}"
+          title="{{ .Site.Params.profilePictureAlt }}"
+          width="auto"
+          height="auto">
+      <figcaption>{{ .Site.Params.profilePictureAlt }}</figcaption>
+      </figure>
     </div>
 
-    <div class="landing-text">
+    <div class="landing-column landing-text">
       {{ .Content }}
     </div>
+  </div>
 
+    <aside class="side">words | words | words | words | words</aside>
 
 {{ end }}

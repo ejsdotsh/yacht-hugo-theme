@@ -1,11 +1,13 @@
-  <nav class="navbar">
-
+<section class="header__container">
+  <div class="header__navbar">
   <!-- baseURL/Title -->
-  <a href="{{ .Site.BaseURL }}" class="logo">
-    <h1>
-      <span class="header__yacht-name">{{ .Site.Title }}</span>
-    </h1>
-  </a>
+    <div class="header__yacht-name">
+      <a href="{{ .Site.BaseURL }}" class="logo">
+        {{/* <h1> */}}
+          <span ><h1>{{ .Site.Title }}</h1></span>
+        {{/* </h1> */}}
+      </a>
+    </div>
 
   {{/*
   <!-- palette picker -->
@@ -19,26 +21,55 @@
   </div>
   */}}
 
-  <!-- navigation -->
-{{/* <div class="navigation bridge" role="navigation" aria-label="main navigation"> */}}
-  <ul>
-    {{ range .Site.Menus.main.ByWeight }}
-    <li class="header__nav-item">
-      <a href="{{ .URL | relURL }}"
-        class="header__nav-link"
-        id="nav-link"
-        title="{{ .Name }}"
-      >{{- .Name -}}</a>
-    </li>
-    {{ end }}
-  </ul>
-  {{/* </div> */}}
-  
-  <!-- hamburger -->
-  <div class="header__hamburger" id="hamburger">
-    <span class="header__bar" aria-hidden="true"></span>
-    <span class="header__bar" aria-hidden="true"></span>
-    <span class="header__bar" aria-hidden="true"></span>
-  </div>
 
-</nav>
+    <!-- navigation -->
+    <nav>
+      <div class="navbar" role="navigation" aria-label="main navigation">
+        <ul class="header__nav-list" id="menu">
+        {{ range .Site.Menus.main.ByWeight }}
+          <li class="header__nav-item">
+            <a href="{{ .URL | relURL }}"
+              class="header__nav-link"
+              id="nav-link"
+              title="{{ .Name }}"
+            >{{- .Name -}}</a>
+          </li>
+        {{ end }}
+        </ul>
+      </div>
+  
+      <!-- hamburger -->
+      {{/* <div class="header__hamburger" id="hamburger" onClick="toggleHamburger();"> */}}
+      <div class="header__hamburger" id="hamburger">
+        <span class="header__hamburger-toggle" aria-hidden="true"></span>
+      </div>
+    </nav>
+
+    <script>
+      ;(function($){
+        $(function() {
+          $('nav ul li > a:not(:only-child)').click(function(e) {
+            $(this)
+              {{/* .siblings('.nav-dropdown') */}}
+              .slideToggle()
+            {{/* $('.nav-dropdown')
+              .not($(this).siblings())
+              .hide() */}}
+            e.stopPropagation()
+          })
+          {{/* $('html').click(function() {
+            $('.nav-dropdown').hide()
+          }) */}}
+          // Toggle open and close nav styles on click
+          $('#hamburger').click(function() {
+            $('nav ul').slideToggle();
+          });
+          $('#hamburger').on('click', function() {
+            this.classList.toggle('active')
+          })
+        })
+      })(jQuery)
+    </script>
+
+  </div>
+</section>
