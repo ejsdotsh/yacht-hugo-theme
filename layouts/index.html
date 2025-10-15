@@ -1,23 +1,58 @@
 {{ define "main" }}
 
-  <div class="home-container">
-    <div class="landing-column landing-image">
-      <figure class="image">
-        <img
-          src="{{ .Site.Params.profilePicture | relURL }}"
-          alt="{{ .Site.Params.profilePictureAlt }}"
-          title="{{ .Site.Params.profilePictureAlt }}"
-          width="auto"
-          height="auto">
-      <figcaption>{{ .Site.Params.profilePictureAlt }}</figcaption>
-      </figure>
-    </div>
-
-    <div class="landing-column landing-text">
-      {{ .Content }}
+  <div class="splash-container">
+    <div class="splash">
+      <h1 class="splash-head">{{ .Site.Title }}</h1>
+      <p class="splash-subhead">{{ .Site.Params.subTitle }}</p>
     </div>
   </div>
 
-    <aside class="side">words | words | words | words | words</aside>
+  <div class="content-wrapper">
+    <div class="content">
+      <div class="content-head is-center">
+        <div class="pure-g">
+
+          <div class="l-box pure-u-1 pure-u-md-1-2">
+            <img
+              classs="pure-img"
+              src="{{ .Site.Params.profilePicture | relURL }}"
+              alt="{{ .Site.Params.profilePictureAlt }}"
+              title="{{ .Site.Params.profilePictureAlt }}"
+              width="auto"
+              height="auto">
+            </img>
+          </div>
+
+          <div class="l-box pure-u-1 pure-u-md-1-2">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g is-center">
+      <div class="pure-u-1 pure-u-md-1-3">
+        <h2><a href="cv" class="content-head content-head-ribbon">cv</a></h2>
+        <p>my work</p>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <h2><a href="projects" class="content-head content-head-ribbon">projects</a></h2>
+        <p>my projects</p>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <h2><a href="blog" class="content-head content-head-ribbon">blog</a></h2>
+        <p>my writings</p>
+      </div>
+    </div>
+
+      {{/* <div class="ribbon l-box-lrg pure-g is-center"> */}}
+        {{/* <div class="pure-u-1"> */}}
+          {{/* <p>words | words | words | words | words</p> */}}
+        {{/* </div> */}}
+      {{/* </div> */}}
+
+    {{ partial "footer.html" . }}
+
+  </div>
 
 {{ end }}

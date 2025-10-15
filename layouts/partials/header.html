@@ -1,75 +1,24 @@
-<section class="header__container">
-  <div class="header__navbar">
-  <!-- baseURL/Title -->
-    <div class="header__yacht-name">
-      <a href="{{ .Site.BaseURL }}" class="logo">
-        {{/* <h1> */}}
-          <span ><h1>{{ .Site.Title }}</h1></span>
-        {{/* </h1> */}}
+<!-- navigation -->
+<nav>
+  <div class="navbar" role="navigation" aria-label="main navigation">
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+      <!-- baseURL/Title -->
+      <a href="{{ .Site.BaseURL }}" class="pure-menu-heading">
+          {{ .Site.Title }}
       </a>
-    </div>
 
-  {{/*
-  <!-- palette picker -->
-  <div class="header__palette-picker">
-    <input type="checkbox" class="header__checkbox" id="checkbox" />
-    <label for="checkbox" class="header__label">
-      <ion-icon name="partly-sunny-outline" class="header__sun"></ion-icon>
-      <ion-icon name="moon-outline" class="header__moon"></ion-icon>
-      <div class="header__switcher"></div>
-    </label>
-  </div>
-  */}}
-
-
-    <!-- navigation -->
-    <nav>
-      <div class="navbar" role="navigation" aria-label="main navigation">
-        <ul class="header__nav-list" id="menu">
+        <ul class="pure-menu-list" id="menu">
         {{ range .Site.Menus.main.ByWeight }}
-          <li class="header__nav-item">
+          <li class="pure-menu-item">
             <a href="{{ .URL | relURL }}"
-              class="header__nav-link"
+              class="pure-menu-link"
               id="nav-link"
               title="{{ .Name }}"
             >{{- .Name -}}</a>
           </li>
         {{ end }}
         </ul>
-      </div>
-  
-      <!-- hamburger -->
-      {{/* <div class="header__hamburger" id="hamburger" onClick="toggleHamburger();"> */}}
-      <div class="header__hamburger" id="hamburger">
-        <span class="header__hamburger-toggle" aria-hidden="true"></span>
-      </div>
-    </nav>
 
-    <script>
-      ;(function($){
-        $(function() {
-          $('nav ul li > a:not(:only-child)').click(function(e) {
-            $(this)
-              {{/* .siblings('.nav-dropdown') */}}
-              .slideToggle()
-            {{/* $('.nav-dropdown')
-              .not($(this).siblings())
-              .hide() */}}
-            e.stopPropagation()
-          })
-          {{/* $('html').click(function() {
-            $('.nav-dropdown').hide()
-          }) */}}
-          // Toggle open and close nav styles on click
-          $('#hamburger').click(function() {
-            $('nav ul').slideToggle();
-          });
-          $('#hamburger').on('click', function() {
-            this.classList.toggle('active')
-          })
-        })
-      })(jQuery)
-    </script>
-
+    </div>
   </div>
-</section>
+</nav>
