@@ -1,4 +1,8 @@
-# YACHT Another Custom Hugo Theme
+---
+title: "about YACHT"
+date: 2025-01-26T10:52:34-08:00
+draft: false
+---
 
 when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
 
@@ -11,8 +15,7 @@ after spending a lot of time trying to customize other people's themes, i decide
 ## what is YACHT
 
 ***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the
-[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal
-external dependencies.
+[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal external dependencies.
 
 ***under construction***
 
@@ -48,12 +51,12 @@ hugo mod get -u ./...
 
 and then do other stuff
 
+***under construction***
+
 ## references
 
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
-- [Catppuccin for Sass](https://github.com/catppuccin/palette/blob/main/docs/sass.md)
-- Lorenze Setale's [My Hugo blog now is fast and light](https://blog.setale.me/2022/01/31/My-Hugo-blog-now-is-fast-and-light/)
 - Atishay Jain's [Hugo in Action](https://www.manning.com/books/hugo-in-action)
 
 [1]: <https://gohugo.io> "Hugo"
-[2]: <https://github.com/catppuccin/palette> "Catppuccin Palettes"
+[2]: <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md> "Catppuccin Style Guide"

@@ -1,21 +1,7 @@
 {{ define "main" }}
-<div class="container">
-  <section class="section">
-    <div class="columns is-vcentered is-max-laptop is-multiline">
 
-      <div class="column is-12">
-        <section class="section">
-          <h2 class="title is-2 is-spaced has-text-centered">{{ .Title }}</h2>
-        </section>
-
-        <section class="section">
-          <div class="content is-justify-content-center" role="main">
-            {{ .Content }}
-          </div>
-        </section>
-      </div>
-
-    </div>
+  <section class="content">
+  {{ .Content }}
   </section>
-</div>
+
 {{ end }}

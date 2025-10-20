@@ -1,0 +1,17 @@
+*
+
+!*/
+
+!go.mod
+!go.sum
+
+!/.gitignore
+!*/**.yaml
+!run_debug.sh
+!archetypes/**
+!assets/**
+!config/**
+!content/**
+!data/**
+!static/**
+

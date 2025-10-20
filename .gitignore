@@ -5,6 +5,7 @@
 !/.dockerignore
 !/.gitignore
 !/.gitkeep
+!/.github
 
 !LICENSE
 !VERSION
@@ -12,13 +13,19 @@
 
 !README.md
 !theme.toml
+!config.yaml
+!hugo.toml
 
 # hugo modules
 !go.sum
 !go.mod
 
 # npm & webpack
-!package*.json
+!package.json
+!package.hugo.json
+!webpack.config.js
+!postcss.config.js
+!tailwind.config.js
 
 # theme components
 !archetypes/**
@@ -27,14 +34,20 @@
 !static/**
 
 !exampleSite/**
-
+exampleSite/resources/
+exampleSite/public/
+/
 # one document directory to consolidate them all
 !docs/**/*.md
 
-# but not the above files in (sub)directories
+# but allow the above files in (sub)directories
 !*/
 
 # explicitly ignore experimentation and in-progress development
 exp/**
 node_modules/**
 public/**
+package-lock.json
+.hugo_build.lock
+resources/
+hugo_stats.json
