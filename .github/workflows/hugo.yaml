@@ -63,7 +63,7 @@ jobs:
       - name: Build the site
         run: |
           cd ./exampleSite
-          hugo mod get -u ./...
+          # hugo mod get -u ./...
           hugo \
             --gc \
             --minify \
