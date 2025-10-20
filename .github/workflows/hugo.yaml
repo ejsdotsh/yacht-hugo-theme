@@ -63,11 +63,11 @@ jobs:
       - name: Build the site
         run: |
           cd ./exampleSite
-          # hugo mod get -u ./...
+          hugo mod get -u ./...
           hugo \
             --gc \
             --minify \
-            # --source exampleSite \
+            --source exampleSite \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
@@ -79,7 +79,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./exampleSite/public
+          path: ./public
   deploy:
     environment:
       name: github-pages
