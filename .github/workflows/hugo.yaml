@@ -68,8 +68,8 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache" \
-            --theme ../..
+            --cacheDir "${{ runner.temp }}/hugo_cache"
+            # --theme ../..
             # --source exampleSite \
       - name: Cache save
         id: cache-save
@@ -80,7 +80,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./exampleSite/public
+          path: ./public
   deploy:
     environment:
       name: github-pages
