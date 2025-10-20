@@ -67,7 +67,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --source exampleSite \
+            # --source exampleSite \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache" \
             --theme ../..
