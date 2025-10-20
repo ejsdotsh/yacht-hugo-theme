@@ -1,6 +1,7 @@
 # YACHT Another Custom Hugo Theme
 
-when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+when graduating from high school, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is
+what they meant...
 
 ***under construction***
 
@@ -26,8 +27,8 @@ in `config.toml`:
 theme = "github.com/ejsdotsh/yacht-hugo-theme"
 
 [module]
-  [[module.imports]]
-    path = "github.com/ejsdotsh/yacht-hugo-theme"
+[[module.imports]]
+path = "github.com/ejsdotsh/yacht-hugo-theme"
 ```
 
 or in `config.yaml`:
@@ -50,8 +51,9 @@ and then do other stuff
 
 ## references
 
+- [Catppuccin](https://github.com/catppuccin/catppuccin)
+- [PureCSS](https://purecss.io)
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
-- [Catppuccin for Sass](https://github.com/catppuccin/palette/blob/main/docs/sass.md)
 - Lorenze Setale's [My Hugo blog now is fast and light](https://blog.setale.me/2022/01/31/My-Hugo-blog-now-is-fast-and-light/)
 - Atishay Jain's [Hugo in Action](https://www.manning.com/books/hugo-in-action)
 
