@@ -67,10 +67,10 @@ jobs:
           hugo \
             --gc \
             --minify \
-            # --source exampleSite \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
             --cacheDir "${{ runner.temp }}/hugo_cache" \
             --theme ../..
+            # --source exampleSite \
       - name: Cache save
         id: cache-save
         uses: actions/cache/save@v4
