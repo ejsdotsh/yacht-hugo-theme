@@ -6,6 +6,7 @@
 !go.sum
 
 !/.gitignore
+!hugo.yaml
 !*/**.yaml
 !run_debug.sh
 !archetypes/**
