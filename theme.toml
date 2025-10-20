@@ -5,7 +5,7 @@ description = "YACHT Another Custom Hugo Theme"
 min_version = "0.110.0"
 
 homepage = "https://github.com/ejsdotsh/yacht-hugo-theme"
-demosite = ""
+demosite = "https://ejsdotsh.github.io/yacht-hugo-theme/"
 
 tags = ["blog", "minimal", "portfolio"]
 features = ["dark"]
