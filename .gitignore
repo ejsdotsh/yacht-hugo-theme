@@ -6,6 +6,8 @@
 !/.gitignore
 !/.gitkeep
 !/.github/**/*.yaml
+!/.nojekyll
+!exampleSite/.nojekyll
 
 !LICENSE
 !VERSION
