@@ -4,13 +4,7 @@ title: "YACHT Another Custom Hugo Theme"
 
 ## under construction
 
-## YACHT
-
-**YACHT**
-
-**A**nother
-
-**C**ustom **H**ugo **T**heme*
+**YACHT** **A**nother **C**ustom **H**ugo **T**heme*
 
 when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
 

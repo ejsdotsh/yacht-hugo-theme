@@ -1,23 +1,23 @@
 <!-- navigation -->
 <nav>
   <div class="navbar" role="navigation" aria-label="main navigation">
-    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    <div class="home-menu pure-menu pure-menu-horizontal">
       <!-- baseURL/Title -->
       <a href="{{ .Site.BaseURL }}" class="pure-menu-heading">
           {{ .Site.Title }}
       </a>
 
-        <ul class="pure-menu-list" id="menu">
-        {{ range .Site.Menus.main.ByWeight }}
-          <li class="pure-menu-item">
-            <a href="{{ .URL | relURL }}"
-              class="pure-menu-link"
-              id="nav-link"
-              title="{{ .Name }}"
-            >{{- .Name -}}</a>
-          </li>
-        {{ end }}
-        </ul>
+      <ul class="pure-menu-list" id="menu">
+      {{ range .Site.Menus.main.ByWeight }}
+        <li class="pure-menu-item">
+          <a href="{{ .URL | relURL }}"
+            class="pure-menu-link"
+            id="nav-link"
+            title="{{ .Name }}"
+          >{{- .Name -}}</a>
+        </li>
+      {{ end }}
+      </ul>
 
     </div>
   </div>
