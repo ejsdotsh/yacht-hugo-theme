@@ -1,10 +1,11 @@
 ---
-title: "about YACHT"
-date: 2025-01-26T10:52:34-08:00
+title: "YACHT Another Custom Hugo Theme"
+date: 2025-11-01T12:06:34-08:00
 draft: false
 ---
 
-when graduating from highschool, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is what they meant...
+when graduating from high school, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is
+what they meant...
 
 ***under construction***
 
@@ -14,8 +15,8 @@ after spending a lot of time trying to customize other people's themes, i decide
 
 ## what is YACHT
 
-***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the
-[Catppuccin Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal external dependencies.
+***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the [Catppuccin
+Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal external dependencies.
 
 ***under construction***
 
@@ -29,8 +30,8 @@ in `config.toml`:
 theme = "github.com/ejsdotsh/yacht-hugo-theme"
 
 [module]
-  [[module.imports]]
-    path = "github.com/ejsdotsh/yacht-hugo-theme"
+[[module.imports]]
+path = "github.com/ejsdotsh/yacht-hugo-theme"
 ```
 
 or in `config.yaml`:
@@ -55,8 +56,11 @@ and then do other stuff
 
 ## references
 
+- [Catppuccin](https://github.com/catppuccin/catppuccin)
+- [PureCSS](https://purecss.io)
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
+- Lorenze Setale's [My Hugo blog now is fast and light](https://blog.setale.me/2022/01/31/My-Hugo-blog-now-is-fast-and-light/)
 - Atishay Jain's [Hugo in Action](https://www.manning.com/books/hugo-in-action)
 
 [1]: <https://gohugo.io> "Hugo"
-[2]: <https://github.com/catppuccin/catppuccin/blob/main/docs/style-guide.md> "Catppuccin Style Guide"
+[2]: <https://github.com/catppuccin/palette> "Catppuccin Palettes"

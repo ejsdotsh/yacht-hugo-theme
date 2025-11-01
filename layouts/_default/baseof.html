@@ -5,17 +5,17 @@
 
   <body>
     <div class="page-wrapper">
-    <header class="header">
-      {{- partial "header.html" . -}}
-    </header>
+      <header class="header .header-wrapper">
+        {{- partial "header.html" . -}}
+      </header>
 
-    <main class="main">
-      {{- block "main" .}}{{- end }}
-    </main>
-    
-    <footer class="footer">
-      {{- partial "footer.html" . -}}
-    </footer>
+      <main class="main content-wrapper">
+        {{- block "main" .}}{{- end }}
+      </main>
+
+      <footer class="footer. footer-wrapper">
+        {{- partial "footer.html" . -}}
+      </footer>
     </div>
   </body>
 
