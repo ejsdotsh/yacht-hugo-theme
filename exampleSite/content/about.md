@@ -1,5 +1,5 @@
 ---
-title: "YACHT Another Custom Hugo Theme"
+title: "about YACHT"
 date: 2025-11-01T12:06:34-08:00
 draft: false
 ---
