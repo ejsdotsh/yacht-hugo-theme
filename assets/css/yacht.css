@@ -56,7 +56,7 @@
     --bolder-font: 900;
 
     /* sizes */
-    --line-height: 1.2rem;
+    --line-height: 1.25rem;
     /* --content-width: 67%; */
     --breakpoint: 799px;
     --nav-height: 70px;
@@ -76,6 +76,13 @@
 
 }
 
+/* CUBE CSS flow */
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+
+
 /*
  * -- BASE STYLING --
  */
@@ -89,20 +96,22 @@ body,
 .page-wrapper {
     height: 100vh;
     width: 100vw;
-    line-height: 1.5em;
+    line-height: var(--line-height);
     background: var(--background-color);
     display: flex;
     flex-flow: column;
+    align-items: center;
 }
 
 /* using flexbox to layout the page and fill the height */
 .header-wrapper {
     flex: 0 1 auto;
+    width: 100%;
 }
 .content-wrapper {
     flex: 1 1 auto;
+    /* align-items: center; */
 }
-
 .footer-wrapper {
     flex: 0 1 auto;
 }
@@ -154,6 +163,8 @@ label {
 */
 
 .l-box {
+    height: 100%;
+    /* max-width: 0 auto; */
     padding: 1em;
 }
 
@@ -209,6 +220,7 @@ a:hover {
 }
 
 .landing-content {
+    {{/* height: 100%; */}}
     h1, h2, h3, h4, h5, h6 {
         text-align: center;
     }
@@ -216,7 +228,10 @@ a:hover {
 
 /* We want to give the content area some more padding */
 .content {
+    height: 100%;
     padding: 2em 2em 2em;
+    overflow: hidden;
+    text-align: justify;
 }
 
 .content-head {
@@ -233,6 +248,8 @@ a:hover {
     background: var(--surface0);
     bottom: 0;
     width: 100%;
+    font-size: 0.9em;
+    text-align: center;
 }
 
 /*
@@ -242,7 +259,7 @@ a:hover {
 
     /* We increase the body font size */
     body {
-        font-size: 1.25em;
+        font-size: 1.15em;
     }
 
     /* We can align the menu header to the left, but float the
@@ -253,6 +270,13 @@ a:hover {
     .home-menu ul {
         float: right;
     }
+
+    .footer-social {
+        text-align: left;
+        }
+    .footer-poweredby {
+        text-align: right;
+        }
 
 }
 
@@ -265,6 +289,7 @@ a:hover {
         padding: 2em 2em 2em;
     }
     .content {
-        width: 80%;
+        width: 70%;
+        margin: 0 auto;
     }
 }
