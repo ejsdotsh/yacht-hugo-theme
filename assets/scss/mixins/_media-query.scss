@@ -1,0 +1,24 @@
+/*
+ * taken and adapted from: https://github.com/Andy-set-studio/gorko/blob/main/src/mixins/_media-query.scss
+*/
+
+/// MEDIA QUERY MIXIN
+/// Pass in the key of one of your breakpoints set in `$yacht-config['breakpoints']`
+/// and this mixin will generate the @media query with your configured value.
+///
+/// @param {string} $key - The key of your configured breakpoint
+///
+@mixin media-query($key) {
+  $breakpoints: map-get($yacht-config, 'breakpoints');
+  $matched-breakpoint: map-get($breakpoints, $key);
+
+  @if not $matched-breakpoint {
+    @warn #{ 'Breakpoint, ‘' + $key + '’ not found in `$yacht-config`. Make sure it’s set in the ‘breakpoints’ section.' };
+  }
+
+  @else {
+    @media #{ $matched-breakpoint } {
+      @content;
+    }
+  }
+}

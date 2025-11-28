@@ -1,30 +1,25 @@
 {{ define "main" }}
 
-    <div class="landing-content is-center">
-        <div class="pure-g l-box">
+  <div class="switcher">
 
-          <div class="l-box pure-u-1 pure-u-md-1-2">
-            <img
-              class="pure-img-responsive"
-              src="{{ .Site.Params.profilePicture | relURL }}"
-              alt="{{ .Site.Params.profilePictureAlt }}"
-              title="{{ .Site.Params.profilePictureAlt }}"
-              width="auto"
-              height="auto">
-            </img>
-          </div>
-
-          <div class="l-box pure-u-1 pure-u-md-1-2 is-justified">
-            {{ .Content }}
-          </div>
-
-          {{/* <div class="ribbon l-box-lrg pure-g is-center"> */}}
-            {{/* <div class="pure-u-1"> */}}
-              {{/* <p>words | words | words | words | words</p> */}}
-            {{/* </div> */}}
-          {{/* </div> */}}
-
-        </div>
+    <div class="yacht-landing__picture">
+      <img
+        src="{{ .Site.Params.profilePicture | relURL }}"
+        alt="{{ .Site.Params.profilePictureAlt }}"
+        title="{{ .Site.Params.profilePictureAlt }}"
+        width="auto"
+        height="auto">
+      </img>
     </div>
+
+    <div class="yacht-landing__content">
+      {{ .Content }}
+    </div>
+
+    {{/* <div class="yacht-landing__aside">
+      <p>words | words | words | words | words</p>
+    </div> */}}
+
+  </div>
 
 {{ end }}

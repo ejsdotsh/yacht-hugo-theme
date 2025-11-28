@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container">
+
+  <section class="section">
+    <h2 class="title is-2 has-text-centered is-spaced">{{ .Page.Title }}</h2>
+  </section>
+
+  <section class="section">
+    {{ range .Pages }}
+      <h3 class="title is-3 is-link">
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      <time>
+        {{ .Date | dateFormat "2" }}
+        {{ .Date | dateFormat "january" }}
+      </time>
+
+      <div class="content">
+        {{ .Summary }}
+      </div>
+    {{ end }}
+  </section>
+
+</div>
+{{ end }}

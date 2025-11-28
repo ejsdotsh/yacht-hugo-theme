@@ -1,24 +1,20 @@
 <!-- navigation -->
-<nav>
-  <div class="navbar" role="navigation" aria-label="main navigation">
-    <div class="home-menu pure-menu pure-menu-horizontal">
+<div class="repel">
       <!-- baseURL/Title -->
-      <a href="{{ .Site.BaseURL }}" class="pure-menu-heading">
+      <a class="yacht-header__logo" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.BaseURL }}">
           {{ .Site.Title }}
       </a>
 
-      <ul class="pure-menu-list" id="menu">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <ul role="list" id="menu" class="cluster">
       {{ range .Site.Menus.main.ByWeight }}
-        <li class="pure-menu-item">
+        <li>
           <a href="{{ .URL | relURL }}"
-            class="pure-menu-link"
             id="nav-link"
             title="{{ .Name }}"
           >{{- .Name -}}</a>
         </li>
       {{ end }}
       </ul>
-
-    </div>
-  </div>
-</nav>
+    </nav>
+</div>

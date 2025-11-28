@@ -4,19 +4,17 @@
   {{- partial "head.html" . -}}
 
   <body>
-    <div class="page-wrapper">
-      <header class="header header-wrapper">
+      <header role="banner" class="yacht-header">
         {{- partial "header.html" . -}}
       </header>
 
-      <main class="main content-wrapper">
+      <main id="main-content" class="wrapper | yacht-main">
         {{- block "main" .}}{{- end }}
       </main>
 
-      <footer class="footer footer-wrapper">
+      <footer class="yacht-footer">
         {{- partial "footer.html" . -}}
       </footer>
-    </div>
   </body>
 
 </html>

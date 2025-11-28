@@ -1,0 +1,30 @@
+.yacht-footer__social {
+  gap: get-size('300');
+  justify-content: center;
+  // margin-top: get-size('500');
+}
+
+.yacht-footer__disclaimer {
+  font-size: get-size('300');
+  gap: get-size('300');
+  text-align: center;
+  // margin-top: get-size('400');
+}
+
+.yacht-footer__copyright {
+  font-size: get-size('300');
+  gap: get-size('300');
+  text-align: justify;
+  // margin-top: get-size('400');
+}
+
+.yacht-footer__copyright img {
+  width: 1em;
+  height: 1em;
+  margin: 0 auto;
+}
+
+.yacht-footer__credits {
+  gap: get-size('300');
+  text-align: right;
+}
