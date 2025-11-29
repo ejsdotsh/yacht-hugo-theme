@@ -1,11 +1,11 @@
 ---
 title: "projects"
 draft: false
-description: a list of my projects
+description: There are multiple Projects here, most of them are not real.
 outputs:
-- HTML
-- JSON
-- RSS
+  - HTML
+  - JSON
+  - RSS
 ---
 
-this is a list of all my projects.
+There are multiple Projects here, most of them are not real.

@@ -2,12 +2,12 @@ baseURL: "https://yacht.githubpages.io"
 languageCode: en-us
 title: "YACHT"
 subtitle: "YACHT Another Custom Hugo Theme"
-theme: "github.com/ejsdotsh/yacht-hugo-theme"
+# theme: "github.com/ejsdotsh/yacht-hugo-theme"
 
 module:
   imports:
-  - path: github.com/ejsdotsh/yacht-hugo-theme
-    disable: false
+    - path: github.com/ejsdotsh/yacht-hugo-theme
+      disable: false
 
 params:
   author: "e.j. sahala (they/them)"
@@ -23,23 +23,23 @@ params:
 
 menus:
   main:
-  - identifier: "home"
-    name: "home"
-    weight: 100
-    url: "/"
-  - identifier: "about"
-    name: "about"
-    weight: 110
-    url: "/about/"
-  - identifier: "blog"
-    name: "blog"
-    weight: 130
-    url: "/blog/"
-  - identifier: "project"
-    name: "projects"
-    weight: 140
-    url: "/projects/"
-  # - identifier: "contact"
-  #   name: "contact"
-  #   weight: 1000
-  #   url: "/contact/"
+    - identifier: "home"
+      name: "home"
+      weight: 100
+      url: "/"
+    - identifier: "about"
+      name: "about"
+      weight: 110
+      url: "/about/"
+    - identifier: "blog"
+      name: "blog"
+      weight: 130
+      url: "/blog/"
+    - identifier: "projects"
+      name: "projects"
+      weight: 140
+      url: "/projects/"
+    # - identifier: "contact"
+    #   name: "contact"
+    #   weight: 1000
+    #   url: "/contact/"

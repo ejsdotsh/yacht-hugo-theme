@@ -53,11 +53,13 @@ $space: (
 
 $space-s-m: min(map-get($space, 's')) max(map-get($space, 'm'));
 $space-s-l: min(map-get($space, 's')) max(map-get($space, 'l'));
+$space-l-xl: min(map-get($space, 'l')) max(map-get($space, 'xl'));
 
 $space-m: map-get($space, 'm');
 $space-l: map-get($space, 'l');
 
-$gutter: $space-s-m;
+$gutter: $space-s-m; 
+$wrapper-width: clamp(16rem, 93vw, 85rem);
 
 /**
  * COLORS
@@ -87,7 +89,8 @@ $yacht-colors: (
   'mauve': #cba6f7,
   'pink': #f5c2e7,
   'teal': #94e2d5,
-  'peach': #fab387
+  'peach': #fab387,
+  'sky': #89dceb
 );
 
 /// CORE CONFIG
@@ -105,19 +108,19 @@ $yacht-config: (
     'output': 'standard',
     'property': 'color'
   ),
-  'box': (
-    'items': (
-      'block': 'block',
-      'flex': 'flex',
-      'hide': 'none',
-      'show': 'inherit'
-    ),
-    'output': 'responsive',
-    'property': 'display'
-  ),
+  // 'box': (
+  //   'items': (
+  //     'block': 'block',
+  //     'flex': 'flex',
+  //     'hide': 'none',
+  //     'show': 'inherit'
+  //   ),
+  //   'output': 'responsive',
+  //   'property': 'display'
+  // ),
   'font': (
     'items': (
-      'base': 'Helvetica, Arial, sans-serif'
+      'base': 'Ubuntu, Helvetica, Arial, sans-serif'
     ),
     'output': 'standard',
     'property': 'font-family'

@@ -1,5 +1,9 @@
+/*
+ * adapted from: https://github.com/Andy-set-studio/personal-site-eleventy/blob/main/src/css/utilities/wrapper.css
+*/
+
 .wrapper {
-  max-width: 75rem;
+  max-width: $wrapper-width;
   margin-left: auto;
   margin-right: auto;
   padding: 0 get-size('500');

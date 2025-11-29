@@ -29,7 +29,7 @@
   <!-- load the yacht stylesheet(s) -->
   {{/*
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> */}}
-  
+
   {{ $style := resources.Get "scss/yacht.scss" | toCSS | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" type="text/css" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 

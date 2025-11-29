@@ -3,6 +3,7 @@
 */
 
 .yacht-header .repel {
+  $gutter: 0.5rem $space-m;
   padding-block: $space-m;
   margin: get-size('400');
 }

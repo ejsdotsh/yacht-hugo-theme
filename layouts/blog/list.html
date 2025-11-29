@@ -1,13 +1,16 @@
 {{ define "main" }}
-<div class="container">
+<article class="wrapper radius stack yacht-blog__list">
 
-  <section class="section">
-    <h2 class="title is-2 has-text-centered is-spaced">{{ .Page.Title }}</h2>
+  <section class="yacht-blog__list-title">
+    <h2>{{ .Page.Title }}</h2>
+
+    {{ .Content }}
   </section>
 
-  <section class="section">
-    {{ range .Pages }}
-      <h3 class="title is-3 is-link">
+  <ul role="list" class="stack">
+    {{ range .Paginator.Pages }}
+    <li>
+      <h3>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </h3>
       <time>
@@ -15,11 +18,14 @@
         {{ .Date | dateFormat "january" }}
       </time>
 
-      <div class="content">
+      <div class="yacht-main__blog-content">
         {{ .Summary }}
       </div>
+    </li>
     {{ end }}
-  </section>
+  </ul>
 
-</div>
+  {{ template "_internal/pagination.html" . }}
+
+</article>
 {{ end }}

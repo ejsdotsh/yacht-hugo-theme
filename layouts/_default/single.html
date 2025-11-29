@@ -1,9 +1,13 @@
 {{ define "main" }}
+<div class="wrapper radius stack | yacht-default">
 
-  <div class="stack">
-    <section class="flow page-content">
-    {{ .Content }}
-    </section>
+  <div class="yacht-default__single-header">
+    <h2>{{ .Title }}</h2>
   </div>
 
+  <div class="yacht-default__single-content">
+    {{ .Content }}
+  </div>
+
+</div>
 {{ end }}

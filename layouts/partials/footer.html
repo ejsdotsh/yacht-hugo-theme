@@ -1,5 +1,6 @@
-<div class="grid">
-  <div class="flow | yacht-footer__social">
+<div class="wrapper repel">
+  <!-- <div class="grid"> -->
+  <div class="yacht-footer__social cluster">
     <ul>
       {{ range .Site.Data.socialmedia.accounts }}
       <li>
@@ -9,25 +10,25 @@
     </ul>
   </div>
 
-  <div class="flow | yacht-footer__disclaimer">
-      all views expressed are my own; any and all art/artwork is copyright its respective owner (myself if not otherwise
-      noted).
+  <div class="yacht-footer__disclaimer">
+    all views expressed are my own; any and all art/artwork is copyright its respective owner (myself if not otherwise
+    noted).
   </div>
- 
-  <div class="flow | yacht-footer__copyright">
-      <!-- baseURL/Title -->
-      <a href="{{ .Site.BaseURL }}" class="footer">
-        {{ .Site.Title }}
-      </a>
-      copyright: &copy; {{ .Site.Params.copyrightFrom }}-present by {{ .Site.Params.author }},
-      and licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+
+  <div class="yacht-footer__copyright cluster">
+    <!-- baseURL/Title -->
+    <a href="{{ .Site.BaseURL }}">
+      {{ .Site.Title }}
+    </a>
+    copyright: &copy; {{ .Site.Params.copyrightFrom }}-present by {{ .Site.Params.author }},
+    and licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
     <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
     <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution">
     <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial">
     <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Share Alike">
   </div>
 
-  <div class="flow | yacht-footer__credits">
+  <div class="yacht-footer__credits cluster">
     <p>powered by<br>
       <a href="https://gohugo.io">Hugo</a>
     </p>
@@ -35,5 +36,6 @@
       <a href="https://github.com/ejsdotsh/yacht">YACHT</a>
     </p>
   </div>
+  <!-- </div> -->
 
 </div>

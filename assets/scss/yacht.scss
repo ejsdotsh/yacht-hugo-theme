@@ -63,11 +63,9 @@ h4 {
 header,
 footer {
   background-color: $color-mantle;
-  // color: $color-subtext0;
 }
 
-a,
-a:visited {
+a {
   color: $link-color;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2ex;
@@ -76,6 +74,10 @@ a:visited {
 a:hover {
   text-underline-offset: 0.1ex;
   color: $hover-color;
+}
+
+a:visited {
+  color: $link-color;
 }
 
 svg {
@@ -94,6 +96,20 @@ img[src*='.svg'] {
 [role='list'] {
   padding: 0;
   margin-bottom: 0;
+}
+
+button {
+  display: inline-block;
+  font: inherit;
+  padding: 0.3em 1em;
+  border: 1px solid $color-subtext0;
+  background: $color-overlay0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: $color-overlay0;
 }
 
 // @include media-query('md') {
@@ -119,4 +135,3 @@ img[src*='.svg'] {
 
 // import utility classes
 @import "utilities/utilities";
-

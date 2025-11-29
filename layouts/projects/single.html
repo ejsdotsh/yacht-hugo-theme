@@ -1,16 +1,17 @@
 {{ define "main" }}
+<div class="radius wrapper yacht-project__single">
+  <div class="sidebar">
 
-  <div class="project-container">
-    <section class="project-list">
+    <section class="wrapper repel yacht-project__single-list">
       <h2>projects</h2>
-      <ul>
+      <ul role="list" class="cluster">
         {{ range (where .Site.RegularPages "Type" "in" "projects").ByDate.Reverse }}
-          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
         {{ end }}
       </ul>
     </section>
 
-    <section class="project">
+    <section class="yacht-project__single-project-details">
       <h2>{{ .Title }}</h2>
 
       {{ .Content }}
@@ -19,12 +20,14 @@
       <h3>tech used</h3>
       <ul>
         {{ range .Params.tech_used }}
-        <li>{{ . }}</li>
+        <li>
+          <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+        </li>
         {{ end }}
       </ul>
 
     </section>
 
   </div>
-
+</div>
 {{ end }}

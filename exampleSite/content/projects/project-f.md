@@ -1,7 +1,7 @@
 ---
 title: "project f"
 draft: false
-image: //via.placeholder.com/640x150
+image: //placehold.co/640x150
 alt_text: "an image of project f project"
 summary: "summary of the project f project"
 tech_used:

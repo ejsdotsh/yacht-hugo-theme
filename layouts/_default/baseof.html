@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode | default "en-us" }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ or site.Language.LanguageCode | default " en-us" }}"
+  dir="{{ or site.Language.LanguageDirection `ltr` }}">
 
-  {{- partial "head.html" . -}}
+{{- partial "head.html" . -}}
 
-  <body>
-      <header role="banner" class="yacht-header">
-        {{- partial "header.html" . -}}
-      </header>
+<body>
+  <a class="skip-link | button" href="#main-content">Skip to content</a>
+  <header role="banner" class="yacht-header">
+    {{- partial "header.html" . -}}
+  </header>
 
-      <main id="main-content" class="wrapper | yacht-main">
-        {{- block "main" .}}{{- end }}
-      </main>
+  <main tabindex="-1" id="main-content" class="yacht-main">
+    {{- block "main" .}}{{- end }}
+  </main>
 
-      <footer class="yacht-footer">
-        {{- partial "footer.html" . -}}
-      </footer>
-  </body>
+  <footer class="yacht-footer">
+    {{- partial "footer.html" . -}}
+  </footer>
+</body>
 
 </html>
