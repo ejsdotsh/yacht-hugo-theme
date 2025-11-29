@@ -1,0 +1,44 @@
+{{ define "main" }}
+<article class="radius wrapper stack | yacht-blog">
+
+  <header>
+    <h2>{{ .Title }}</h2>
+    <p>written by: {{ .Params.author }}</p>
+    <p>originally posted: {{ .Date.Format "2006-01-02" }}</p>
+    <p>reading time: approximately {{ math.Round (div (countwords .Content) 200.0) }} minutes</p>
+    <p>word count: {{ countwords .Content }}</p>
+
+    <span class="tags cluster">
+      categories:
+      {{ range .Params.categories }}
+      <a class="tag" href="/categories/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </span>
+    <span class="tags cluster">
+      tags:
+      {{ range .Params.tags }}
+      <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+      {{ end }}
+    </span>
+  </header>
+
+  <section class="section">
+    <div class="content is-normal" role="main">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <section class="section related">
+    {{ $related := .Site.RegularPages.Related . | first 5 }}
+    {{ with $related }}
+    <h3>related pages</h3>
+    <ul>
+      {{ range . }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+    {{ end }}
+  </section>
+
+</article>
+{{ end }}

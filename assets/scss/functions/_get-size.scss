@@ -1,0 +1,22 @@
+/*
+ * taken and adapted from: https://github.com/Andy-set-studio/gorko/blob/main/src/functions/_get-size.scss
+*/
+
+/// GET SIZE FUNCTION
+///
+/// Function tries to match the passed $ratio-key with the $yacht-size-scale. Returns null
+/// if it can’t find a match.
+///
+/// @param {string} $ratio-key - The size ratio that you want to get
+///
+@function get-size($ratio-key) {
+  $response: map-get($yacht-size-scale, $ratio-key);
+
+  @if ($response) {
+    @return $response;
+  }
+
+  @warn #{'Size "' + $ratio-key + '" not found in $yacht-size-scale'};
+
+  @return null;
+}

@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {{- range $index, $page := (where .Site.RegularPages "Type" "in" "project") }}
+    {{- if $index -}} , {{- end }}
+    {
+      "url": {{ .Permalink | jsonify }},
+      "title": {{ .Title | jsonify }},
+      "summary": {{ .Summary | jsonify }}
+    }
+    {{- end }}
+  ]
+}

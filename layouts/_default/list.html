@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="radius stack | yacht-default__list">
+
+  <div class="yacht-default__list-title">
+    <h2>{{ .Title }}</h2>
+  </div>
+
+  <div class="yacht-default__list-content">
+    {{ .Content }}
+
+    <ul>
+      {{ range .Pages }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+</div>
+{{ end }}

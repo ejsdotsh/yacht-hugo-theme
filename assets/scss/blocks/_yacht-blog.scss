@@ -1,0 +1,41 @@
+.yacht-blog__list-title.h2 {
+  text-align: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 1em auto;
+  padding: 0;
+}
+
+.pagination .page-item {
+  border: 1px solid $color-overlay0;
+  flex: 1;
+  text-align: center;
+  width: 5em;
+}
+
+.pagination .page-link {
+  display: block;
+  text-decoration: none;
+}
+
+.pagination>.page-item.active {
+  background-color: $color-overlay0;
+}
+
+.pagination>.page-item.active>.page-link {
+  color: $color-subtext0;
+}
+
+.pagination>.page-item.disabled>.page-link {
+  color: $color-subtext1;
+}
+
+@media only screen and (min-width: 768px) {
+  .pagination {
+    width: 30%;
+  }
+}

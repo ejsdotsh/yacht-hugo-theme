@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="wrapper radius stack yacht-blog__list">
+
+  <section class="yacht-blog__list-title">
+    <h2>{{ .Page.Title }}</h2>
+
+    {{ .Content }}
+  </section>
+
+  <ul role="list" class="stack">
+    {{ range .Paginator.Pages }}
+    <li>
+      <h3>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      </h3>
+      <time>
+        {{ .Date | dateFormat "2" }}
+        {{ .Date | dateFormat "january" }}
+      </time>
+
+      <div class="yacht-main__blog-content">
+        {{ .Summary }}
+      </div>
+    </li>
+    {{ end }}
+  </ul>
+
+  {{ template "_internal/pagination.html" . }}
+
+</article>
+{{ end }}

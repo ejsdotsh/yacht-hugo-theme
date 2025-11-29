@@ -1,0 +1,19 @@
+/* taken and adapted from:
+ * https://github.com/Andy-set-studio/personal-site-eleventy/blob/main/src/css/blocks/skip-link.css
+*/
+
+.yacht-header .repel {
+  $gutter: 0.5rem $space-m;
+  padding-block: $space-m;
+  margin: get-size('400');
+}
+
+.yacht-header nav ul li a {
+  font-size: 1rem;
+  color: $color-subtext0;
+}
+
+.yacht-header__logo {
+  font-size: 2.5rem;
+  color: $color-subtext0;
+}

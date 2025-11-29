@@ -1,0 +1,27 @@
+/*
+ * adapted from: https://every-layout.dev/layouts/stack/
+*/
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack>* {
+  margin-block: 0;
+}
+
+.stack>*+* {
+  margin-block-start: var(--space, 1.6rem);
+}
+
+.stack:only-child {
+  /* ↓ `height` in horizontal-tb writing mode */
+  block-size: 100%;
+}
+
+.stack-exception,
+.stack-exception + * {
+  --space: 3rem;
+}

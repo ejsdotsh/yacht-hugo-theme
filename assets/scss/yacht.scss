@@ -1,0 +1,137 @@
+/* 
+  taken and adapted from:
+    https://github.com/Andy-set-studio/personal-site-eleventy/blob/main/src/css/global/global-styles.css
+
+  Global styles 
+
+  Low-specificity, global styles that apply to the whole 
+  project: https://cube.fyi/css.html
+*/
+
+@import "config";
+@import "functions/functions";
+@import "mixins/mixins";
+
+@import "global/reset";
+
+:root {
+  --flow-space: #{get-size('600')};
+  // height: -webkit-fill-available;
+  // min-height: -webkit-fill-available;
+}
+
+body {
+  background-color: $color-base;
+  color: $color-text;
+  line-height: 1.5;
+  font-size: $yacht-base-size;
+  font-family: $font-stack;
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  padding-bottom: get-size('600');
+}
+
+main {
+  flex: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: get-size('900');
+}
+
+h2 {
+  font-size: get-size('700');
+}
+
+h3 {
+  font-size: get-size('600');
+}
+
+h4 {
+  font-size: get-size('500');
+}
+
+header,
+footer {
+  background-color: $color-mantle;
+}
+
+a {
+  color: $link-color;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2ex;
+}
+
+a:hover {
+  text-underline-offset: 0.1ex;
+  color: $hover-color;
+}
+
+a:visited {
+  color: $link-color;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+}
+
+img {
+  height: auto;
+}
+
+img[src*='.svg'] {
+  width: 100%;
+}
+
+[role='list'] {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+button {
+  display: inline-block;
+  font: inherit;
+  padding: 0.3em 1em;
+  border: 1px solid $color-subtext0;
+  background: $color-overlay0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: $color-overlay0;
+}
+
+// @include media-query('md') {
+//   h1::before {
+//     content: '#';
+//     margin-inline-start: -2ch;
+//   }
+
+//   h2::before {
+//     content: '##';
+//     margin-inline-start: -3ch;
+//   }
+
+//   h3::before {
+//     content: '###';
+//     margin-inline-start: -4ch;
+//   }
+// }
+
+// import compositions and blocks
+@import "compositions/compositions";
+@import "blocks/blocks";
+
+// import utility classes
+@import "utilities/utilities";
