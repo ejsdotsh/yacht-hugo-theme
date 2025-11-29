@@ -3,10 +3,6 @@
 when graduating from high school, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is
 what they meant...
 
-***under construction***
-
-after spending a lot of time trying to customize other people's themes, i decided to create...
-
 ***YACHT** **A**nother **C**ustom **H**ugo **T**heme*
 
 ## what is YACHT
@@ -23,8 +19,6 @@ after it's been constructed, the preferred way of getting your own **YACHT** is 
 in `config.toml`:
 
 ```toml
-theme = "github.com/ejsdotsh/yacht-hugo-theme"
-
 [module]
 [[module.imports]]
 path = "github.com/ejsdotsh/yacht-hugo-theme"
@@ -33,7 +27,6 @@ path = "github.com/ejsdotsh/yacht-hugo-theme"
 or in `config.yaml`:
 
 ```yaml
-theme: "github.com/ejsdotsh/yacht-hugo-theme"
 module:
   imports:
     path: "github.com/ejsdotsh/yacht-hugo-theme"
@@ -46,17 +39,15 @@ then run:
 hugo mod get -u ./...
 ```
 
-and then do other stuff
-
-***under construction***
-
-## references
+## references and inspiration
 
 - [Catppuccin](https://github.com/catppuccin/catppuccin)
-- [PureCSS](https://purecss.io)
 - Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
+- [Every Layout](https://every-layout.dev/)
+- [Andy Bell's](https://github.com/Andy-set-studio/personal-site-eleventy) personal site
+- CUBECSS [blog](https://piccalil.li/blog/cube-css/) post
+- [CUBECSS](https://cube.fyi/)
 - Lorenze Setale's [My Hugo blog now is fast and light](https://blog.setale.me/2022/01/31/My-Hugo-blog-now-is-fast-and-light/)
-- Atishay Jain's [Hugo in Action](https://www.manning.com/books/hugo-in-action)
 
 [1]: <https://gohugo.io> "Hugo"
 [2]: <https://github.com/catppuccin/palette> "Catppuccin Palettes"
