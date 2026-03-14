@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO_VERSION: 1.25.1
-      HUGO_VERSION: "0.155.3"
+      HUGO_VERSION: "0.154.5"
       TZ: America/Los_Angeles
     steps:
       - name: Checkout
@@ -45,7 +45,7 @@ jobs:
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "${HUGO_VERSION}"
+          hugo-version: ${{env.HUGO_VERSION}}
           extended: true
 
       - name: Verify installations
