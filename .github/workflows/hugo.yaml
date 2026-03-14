@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GO_VERSION: 1.25.1
-      HUGO_VERSION: "latest"
+      HUGO_VERSION: "0.155.0"
       TZ: America/Los_Angeles
     steps:
       - name: Checkout
