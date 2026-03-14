@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 .splitter {
   > :last-child {
     margin-top: get-size('500');

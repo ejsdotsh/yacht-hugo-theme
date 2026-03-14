@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 .yacht-landing {
   text-align: justify;
   margin-left: auto;
@@ -6,6 +8,8 @@
   padding-right: get-size('600');
 }
 
-.yacht-landing__content h1, h2, h3 {
+.yacht-landing__content h1,
+h2,
+h3 {
   text-align: center;
 }

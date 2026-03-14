@@ -1,7 +1,9 @@
+@use "../config";
+
 .skip-link {
   position: absolute;
-  top: $gutter;
-  left: $gutter;
+  top: config.$gutter;
+  left: config.$gutter;
   z-index: 99;
 }
 
