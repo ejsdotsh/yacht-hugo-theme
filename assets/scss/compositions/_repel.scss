@@ -1,3 +1,5 @@
+@use "../config";
+
 /*
  * taken and adapted from: https://github.com/Andy-set-studio/personal-site-eleventy
 */
@@ -19,7 +21,7 @@ Can be any acceptable flexbox alignment value.
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  gap: $gutter $space-s-l;
+  gap: config.$gutter config.$space-s-l;
 }
 
 .repel[data-nowrap] {

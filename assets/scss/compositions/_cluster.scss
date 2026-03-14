@@ -1,3 +1,5 @@
+@use "../config";
+
 /*
  * taken and adapted from: https://github.com/Andy-set-studio/personal-site-eleventy
 */
@@ -21,7 +23,7 @@ Can be any acceptable flexbox alignment value.
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter, $space-s-l);
+  gap: var(--gutter, config.$space-s-l);
   justify-content: var(--cluster-horizontal-alignment, flex-start);
   align-items: var(--cluster-vertical-alignment, right);
 }

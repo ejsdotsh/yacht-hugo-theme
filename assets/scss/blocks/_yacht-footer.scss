@@ -1,3 +1,5 @@
+@use "../functions/functions";
+
 .yacht-footer__social {
   gap: get-size('300');
   justify-content: center;

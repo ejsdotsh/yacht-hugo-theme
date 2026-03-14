@@ -1,6 +1,9 @@
+@use "../config";
+@use "../functions/functions";
+
 .yacht-404 {
-  background-color: $color-red;
-  color: $color-mantle;
+  background-color: config.$color-red;
+  color: config.$color-mantle;
   text-align: center;
   padding-left: get-size('600');
   padding-right: get-size('600');

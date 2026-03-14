@@ -1,3 +1,11 @@
+@use "config";
+@use "functions/functions";
+@use "mixins/mixins";
+@use "global/reset";
+@use "compositions/compositions";
+@use "blocks/blocks";
+@use "utilities/utilities";
+
 /* 
   taken and adapted from:
     https://github.com/Andy-set-studio/personal-site-eleventy/blob/main/src/css/global/global-styles.css
@@ -8,24 +16,20 @@
   project: https://cube.fyi/css.html
 */
 
-@import "config";
-@import "functions/functions";
-@import "mixins/mixins";
-
-@import "global/reset";
+$flow-space: get-size('600');
 
 :root {
-  --flow-space: #{get-size('600')};
+  --flow-space: $flow-space;
   // height: -webkit-fill-available;
   // min-height: -webkit-fill-available;
 }
 
 body {
-  background-color: $color-base;
-  color: $color-text;
+  background-color: config.$color-base;
+  color: config.$color-text;
   line-height: 1.5;
-  font-size: $yacht-base-size;
-  font-family: $font-stack;
+  font-size: config.$yacht-base-size;
+  font-family: config.$font-stack;
   display: flex;
   flex-direction: column;
 
@@ -62,22 +66,22 @@ h4 {
 
 header,
 footer {
-  background-color: $color-mantle;
+  background-color: config.$color-mantle;
 }
 
 a {
-  color: $link-color;
+  color: config.$link-color;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2ex;
 }
 
 a:hover {
   text-underline-offset: 0.1ex;
-  color: $hover-color;
+  color: config.$hover-color;
 }
 
 a:visited {
-  color: $link-color;
+  color: config.$link-color;
 }
 
 svg {
@@ -102,14 +106,14 @@ button {
   display: inline-block;
   font: inherit;
   padding: 0.3em 1em;
-  border: 1px solid $color-subtext0;
-  background: $color-overlay0;
+  border: 1px solid config.$color-subtext0;
+  background: config.$color-overlay0;
   font-weight: 700;
   cursor: pointer;
 }
 
 button:hover {
-  background: $color-overlay0;
+  background: config.$color-overlay0;
 }
 
 // @include media-query('md') {
@@ -128,10 +132,3 @@ button:hover {
 //     margin-inline-start: -4ch;
 //   }
 // }
-
-// import compositions and blocks
-@import "compositions/compositions";
-@import "blocks/blocks";
-
-// import utility classes
-@import "utilities/utilities";

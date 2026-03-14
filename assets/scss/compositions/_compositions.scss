@@ -1,5 +1,5 @@
-@import 'cluster';
-@import 'grid';
-@import 'repel';
-@import 'sidebar';
-@import 'switcher';
+@forward 'cluster';
+@forward 'grid';
+@forward 'repel';
+@forward 'sidebar';
+@forward 'switcher';

@@ -22,6 +22,10 @@ in `config.toml`:
 [module]
 [[module.imports]]
 path = "github.com/ejsdotsh/yacht-hugo-theme"
+
+[markup]
+[markup.sass]
+embed = false
 ```
 
 or in `config.yaml`:
@@ -31,6 +35,10 @@ module:
   imports:
     path: "github.com/ejsdotsh/yacht-hugo-theme"
     disable: false
+
+markup:
+  sass:
+    embed: false
 ```
 
 then run:
