@@ -30,9 +30,24 @@
   {{/*
   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"> */}}
 
-  {{ $opts := dict "transpiler" "dartsass" "targetPath" "css/yacht.css" }}
-  {{ with resources.Get "scss/yacht.scss" | toCSS $opts | minify | fingerprint }}
+  {{ with resources.Get "scss/yacht.scss" }}
+  {{ $opts := dict
+  "enableSourceMap" hugo.IsDevelopment
+  "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+  "targetPath" "css/yacht.css"
+  "transpiler" "dartsass"
+  "vars" site.Params.styles
+  "includePaths" (slice "node_modules/sass")
+  }}
+  {{ with . | toCSS $opts }}
+  {{ if hugo.IsDevelopment }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{ else }}
+  {{ with . | minify | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+  {{ end }}
+  {{ end }}
+  {{ end }}
   {{ end }}
 
   <!-- render any configured/available alternate formats -->
