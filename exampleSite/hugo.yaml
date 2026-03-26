@@ -1,8 +1,7 @@
-baseURL: "https://yacht.githubpages.io"
+baseURL: "https://ejsdotsh.github.io/yacht-hugo-theme/"
 languageCode: en-us
 title: "YACHT"
 subtitle: "YACHT Another Custom Hugo Theme"
-# theme: "github.com/ejsdotsh/yacht-hugo-theme"
 
 module:
   imports:
@@ -11,7 +10,7 @@ module:
 
 params:
   author: "e.j. sahala (they/them)"
-  description: "YACHT Another Custom Hugo Theme - a recursively named, mobile-first, accessible, and responsive theme for the Hugo static site generator, using the Catppuccin color palette, and styled with some CSS."
+  description: "YACHT Another Custom Hugo Theme - a punny and recursively named theme for the Hugo static site generator."
   copyrightFrom: "2022"
   # logoPicture: "yacht-logo.svg"
   profilePicture: "yacht-mocha.svg"
