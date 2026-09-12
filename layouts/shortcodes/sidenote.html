@@ -1,0 +1,7 @@
+<!-- layouts/shortcodes/sidenote.html -->
+<label for="sn-{{ .Page.File.UniqueID }}-{{ .Ordinal }}" class="margin-toggle">⊕</label>
+<input type="checkbox" id="sn-{{ .Page.File.UniqueID }}-{{ .Ordinal }}" class="yacht-sidenote-toggle">
+<span class="yacht-sidenote sans">
+  {{ .Inner | markdownify }}
+  {{ with .Get "credit" }}<br>— {{ . }}{{ end }}
+</span>

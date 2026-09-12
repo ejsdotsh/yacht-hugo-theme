@@ -1,25 +1,13 @@
+<!-- index.html -->
 {{ define "main" }}
-
-  <div class="switcher | yacht-landing">
-
-    <div class="yacht-landing__picture">
-      <img
-        src="{{ .Site.Params.profilePicture | relURL }}"
-        alt="{{ .Site.Params.profilePictureAlt }}"
-        title="{{ .Site.Params.profilePictureAlt }}"
-        width="auto"
-        height="auto">
-      </img>
-    </div>
-
-    <div class="yacht-landing__content">
-      {{ .Content }}
-    </div>
-
-    {{/* <div class="yacht-landing__aside">
-      <p>words | words | words | words | words</p>
-    </div> */}}
-
+<div class="switcher yacht-landing">
+  <div class="yacht-landing__picture">
+    <img src="{{ .Site.Params.profilePicture | relURL }}"
+         alt="{{ .Site.Params.profilePictureAlt }}"
+         title="{{ .Site.Params.profilePictureAlt }}">
   </div>
-
+  <div class="yacht-landing__content">
+    {{ .Content }}
+  </div>
+</div>
 {{ end }}

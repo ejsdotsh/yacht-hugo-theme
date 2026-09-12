@@ -1,44 +1,47 @@
+<!-- blog/single.html -->
 {{ define "main" }}
-<article class="radius wrapper stack | yacht-blog">
+<article class="rounded-lg wrapper stack yacht-blog font-tufte">
 
   <header>
     <h2>{{ .Title }}</h2>
-    <p>written by: {{ .Params.author }}</p>
-    <p>originally posted: {{ .Date.Format "2006-01-02" }}</p>
-    <p>reading time: approximately {{ math.Round (div (countwords .Content) 200.0) }} minutes</p>
-    <p>word count: {{ countwords .Content }}</p>
+    <label for="sn-meta-{{ .File.UniqueID }}" class="margin-toggle">⊕</label>
+    <input type="checkbox" id="sn-meta-{{ .File.UniqueID }}" class="yacht-sidenote-toggle">
+    <span class="yacht-sidenote sans">
+      written by: {{ .Params.author }}<br>
+      originally posted: {{ .Date.Format "2006-01-02" }}<br>
+      reading time: approximately {{ math.Ceil (div (countwords .Content) 200.0) }} minutes<br>
+      word count: {{ countwords .Content }}
+    </span>
 
     <span class="tags cluster">
       categories:
       {{ range .Params.categories }}
-      <a class="tag" href="/categories/{{ . | urlize }}">{{ . }}</a>
+      <a href="/categories/{{ . | urlize }}">{{ . }}</a>
       {{ end }}
     </span>
     <span class="tags cluster">
       tags:
       {{ range .Params.tags }}
-      <a class="tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+      <a href="/tags/{{ . | urlize }}">{{ . }}</a>
       {{ end }}
     </span>
   </header>
 
-  <section class="section">
-    <div class="content is-normal" role="main">
-      {{ .Content }}
-    </div>
+  <section class="yacht-blog__content">
+    {{ .Content }}
   </section>
 
-  <section class="section related">
-    {{ $related := .Site.RegularPages.Related . | first 5 }}
-    {{ with $related }}
+  {{ $related := site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  <section class="yacht-blog__related">
     <h3>related pages</h3>
-    <ul>
+    <ul role="list" class="stack">
       {{ range . }}
       <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}
     </ul>
-    {{ end }}
   </section>
+  {{ end }}
 
 </article>
 {{ end }}

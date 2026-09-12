@@ -1,8 +1,9 @@
-# YACHT — Another Custom Hugo Theme
+# YACHT Another Custom Hugo Theme
 
-> When graduating from high school, I was voted *"most likely to own a yacht"* by my senior class. I don't think this is what they meant...
+> **Under Construction** — this theme is sometimes being actively developed; breaking changes ahead
 
-**YACHT** = **Y**ACHT **A**nother **C**ustom **H**ugo **T**heme
+<!-- **YACHT** = **Y**ACHT **A**nother **C**ustom **H**ugo **T**heme -->
+
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ejsdotsh/yacht-hugo-theme/hugo.yaml?branch=main&logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/workflows)
 [![Latest Release](https://img.shields.io/github/v/release/ejsdotsh/yacht-hugo-theme?logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/releases)
@@ -13,6 +14,8 @@
 
 ---
 
+> When graduating from high school, I was voted *"most likely to own a yacht"* by my senior class. I don't think this is what they meant...
+
 ## What Is YACHT?
 
 **YACHT** is a punny and recursively named theme for the [Hugo](https://gohugo.io) static site generator which uses the [Catppuccin Palettes](https://github.com/catppuccin/palette) and aims to be:
@@ -21,21 +24,17 @@
 - Mobile-first
 - Accessible
 - Responsive
-- Minimal external dependencies
-
-> **Under Construction** — this theme is sometimes being actively developed; breaking changes ahead
+- Self-contained (have minimal external dependencies)
 
 ## Getting Your Own YACHT
 
 Once constructed, the preferred way of getting your own **YACHT** is by using **Hugo Modules**.
 
-Please note that with the pending removal of the embedded libsass transpiler in Hugo, an external installion (not covered) of Dart Sass is required.
-
 ### Requirements
 
 - Hugo ≥ 0.114.0
 - Go (for module management)
-- Dart Sass
+- TailwindCSS CLI
 
 ### Configuration
 

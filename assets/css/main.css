@@ -1,0 +1,443 @@
+/* ============================================================
+   YACHT — main.css
+   Tailwind v4 + CUBE CSS + Tufte structures
+
+   Replaces the entire scss/ tree:
+     config.scss          → @theme tokens
+     global/reset.scss    → Preflight + deltas
+     global/global-*.scss→ @layer base
+     compositions/*       → @utility
+     blocks/*             → @layer components
+     utilities/*          → @utility / deleted (native Tailwind)
+     functions/, mixins/  → deleted (obsolete)
+   ============================================================ */
+
+@import "tailwindcss";
+/* @plugin "@tailwindcss/typography"; */
+@source "hugo_stats.json";
+
+/* ── DESIGN TOKENS (was config.scss) ─────────────────────── */
+
+@theme {
+  /* fonts */
+  --font-base: Ubuntu, Helvetica, Arial, sans-serif;
+  --font-mono: "Fira Mono", monospace;
+  --font-tufte: "ETBook", Palatino, "Palatino Linotype", serif;
+
+  /* major-third size scale (was $yacht-size-scale) */
+  --text-300: 0.8rem;
+  --text-400: 1rem;
+  --text-500: 1.25rem;
+  --text-600: 1.6rem;
+  --text-700: 2rem;
+  --text-900: 3rem;
+
+  /* space scale (was $space) */
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* wrapper (was $wrapper-width) */
+  --wrapper-max: clamp(16rem, 93vw, 85rem);
+
+  /* breakpoints (em-based, was $yacht-config['breakpoints']) */
+  --breakpoint-sm: 36em;
+  --breakpoint-md: 48em;
+  --breakpoint-lg: 62em;
+
+  /* ── Catppuccin Mocha (was $yacht-colors) ──
+     NB: rosewater/flamingo/maroon/sapphire/lavender were silently
+     null in the SCSS maps — real values restored.               */
+  --color-ctp-base: #1e1e2e;
+  --color-ctp-base-inverted: #eff1f5;      /* Latte */
+  --color-ctp-crust: #11111b;
+  --color-ctp-mantle: #181825;
+  --color-ctp-overlay0: #6c7086;
+  --color-ctp-overlay1: #7f849c;
+  --color-ctp-overlay2: #9399b2;
+  --color-ctp-surface0: #313244;
+  --color-ctp-surface1: #45475a;
+  --color-ctp-surface2: #585b70;
+  --color-ctp-text: #cdd6f4;
+  --color-ctp-subtext0: #a6adc8;
+  --color-ctp-subtext1: #bac2de;
+  --color-ctp-rosewater: #f5e0dc;
+  --color-ctp-flamingo: #f2cdcd;
+  --color-ctp-pink: #f5c2e7;
+  --color-ctp-mauve: #cba6f7;
+  --color-ctp-red: #f38ba8;
+  --color-ctp-maroon: #eba0ac;
+  --color-ctp-peach: #fab387;
+  --color-ctp-yellow: #f9e2af;
+  --color-ctp-green: #a6e3a1;
+  --color-ctp-teal: #94e2d5;
+  --color-ctp-sky: #89dceb;
+  --color-ctp-sapphire: #74c7ec;
+  --color-ctp-blue: #89b4fa;
+  --color-ctp-lavender: #b4befe;
+
+  /* semantic aliases (was $link-color / $hover-color) */
+  --color-ctp-link: var(--color-ctp-blue);
+  --color-ctp-hover: var(--color-ctp-sky);
+}
+
+/* ── COMPOSITION CUSTOM PROPERTIES ──────────────────────────
+   Was the broken min()/max() space pairs — now real values.
+   Override per-context: style="--gutter: 1rem"                    */
+:root {
+  --gutter: 0.75rem;
+  --space-s-l: 0.75rem;
+  --flow-space: 1.6rem;   /* was get-size('600') */
+}
+
+/* ── COMPOSITIONS (Every Layout, was compositions/*) ─────── */
+
+@utility cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-s-l));
+  justify-content: var(--cluster-horizontal-alignment, flex-start);
+  align-items: var(--cluster-vertical-alignment, stretch);
+}
+
+@utility grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-placement, auto-fill),
+                               minmax(var(--grid-min-item-size, 14rem), 1fr));
+  gap: var(--gutter, var(--space-s-l));
+
+  &[data-fit="auto-fit"] { --grid-placement: auto-fit; }
+  /* masonry is not implemented in stable browsers as of 2026 */
+  &[data-rows="masonry"] {
+    align-items: start;
+    grid-template-rows: masonry;
+  }
+}
+
+@utility repel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gutter, var(--space-s-l));
+
+  &[data-nowrap] { flex-wrap: nowrap; }
+}
+
+@utility sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-s-l));
+
+  &:not([data-direction]) > :first-child {
+    flex-basis: var(--sidebar-target-width, 20rem);
+    flex-grow: 1;
+  }
+  &:not([data-direction]) > :last-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: var(--sidebar-content-min-width, 50%);
+  }
+
+  /* flipped: sidebar on the right */
+  &[data-direction="rtl"] > :last-child {
+    flex-basis: var(--sidebar-target-width, 20rem);
+    flex-grow: 1;
+  }
+  &[data-direction="rtl"] > :first-child {
+    flex-basis: 0;
+    flex-grow: 999;
+    min-width: var(--sidebar-content-min-width, 50%);
+  }
+}
+
+@utility switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter, var(--space-s-l));
+  align-items: var(--switcher-vertical-alignment, flex-start);
+
+  & > * {
+    flex-grow: 1;
+    flex-basis: calc((var(--switcher-target-container-width, 40rem) - 100%) * 999);
+  }
+  /* max 2 items — everything after collapses */
+  & > :nth-last-child(n + 3),
+  & > :nth-last-child(n + 3) ~ * {
+    flex-basis: 100%;
+  }
+}
+
+/* stack — flex gap replaces the lobotomized-owl margins;
+   :only-child moved to the child, where the intent always was */
+@utility stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--space, 1.6rem);
+
+  & > :only-child { block-size: 100%; }
+}
+
+@utility stack-exception {
+  --space: 3rem;
+}
+
+/* wrapper (was utilities/wrapper) */
+@utility wrapper {
+  max-width: var(--wrapper-max);
+  margin-inline: auto;
+  padding-inline: 1.25rem;   /* was get-size('500') */
+  position: relative;
+}
+
+/* splitter — revival-ready; prefer sidebar composition instead */
+/*
+@utility splitter {
+  & > :last-child { margin-block-start: 1.25rem; }
+  @media (min-width: 48em) {
+    display: flex;
+    & > * { flex-grow: 1; }
+    & > :last-child {
+      margin-block-start: 0;
+      margin-inline-start: 1.25rem;
+      min-width: 22rem;
+    }
+  }
+}
+*/
+
+/* ── GLOBAL STYLES (was global-styles.scss) + reset deltas ── */
+
+@layer base {
+  /* deltas Andy Bell's reset covers that Preflight does not */
+  h1, h2, h3, h4, button, input, label { line-height: 1.1; }
+  h1, h2, h3, h4 { text-wrap: balance; }
+  textarea:not([rows]) { min-height: 10em; }
+  :target { scroll-margin-block: 5ex; }
+
+  body {
+    background-color: var(--color-ctp-base);
+    color: var(--color-ctp-text);
+    font-family: var(--font-base);
+    font-size: 1rem;                 /* $yacht-base-size */
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-bottom: 2.4rem;
+  }
+
+  main { flex: auto; }
+
+  h1, h2, h3, h4 { font-weight: 400; }
+  h1 { font-size: var(--text-900); }
+  h2 { font-size: var(--text-700); }
+  h3 { font-size: var(--text-600); }
+  h4 { font-size: var(--text-500); }
+
+  header, footer { background-color: var(--color-ctp-mantle); }
+
+  a {
+    color: var(--color-ctp-link);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2ex;
+  }
+  a:hover {
+    color: var(--color-ctp-hover);
+    text-underline-offset: 0.1ex;
+  }
+  a:visited { color: var(--color-ctp-link); }
+
+  svg { width: 1em; height: 1em; }
+  img { height: auto; }
+  img[src*=".svg"] { width: 100%; }
+  [role="list"] { padding: 0; margin-bottom: 0; }
+
+  button {
+    display: inline-block;
+    font: inherit;
+    padding: 0.3em 1em;
+    border: 1px solid var(--color-ctp-subtext0);
+    background: var(--color-ctp-overlay0);
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+/* ── BLOCKS (was blocks/*) + Tufte structural layer ───────── */
+
+@layer components {
+  /* skip-link (native; templates pair with :not(:focus) hiding) */
+  .skip-link {
+    position: absolute;
+    top: var(--spacing-s);
+    left: var(--spacing-s);
+    z-index: 99;
+  }
+  .skip-link:not(:focus) {
+    clip-path: inset(50%);
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  /* header */
+  .yacht-header .repel {
+    gap: 0.5rem var(--spacing-m);   /* was invalid config.$gutter: syntax */
+    padding-block: var(--spacing-m);
+    margin-block: 1rem;
+  }
+  .yacht-header nav ul li a {
+    font-size: 1rem;
+    color: var(--color-ctp-subtext0);
+  }
+  .yacht-header__logo {
+    font-size: 2.5rem;
+    color: var(--color-ctp-subtext0);
+  }
+
+  /* footer */
+  .yacht-footer__social {
+    gap: var(--text-300);
+    justify-content: center;
+  }
+  .yacht-footer__disclaimer {
+    font-size: var(--text-300);
+    gap: var(--text-300);
+    text-align: center;
+  }
+  .yacht-footer__copyright {
+    font-size: var(--text-300);
+    gap: var(--text-300);
+    text-align: justify;             /* NB: deprecated behavior — candidate for removal */
+  }
+  .yacht-footer__copyright img {
+    width: 1em;
+    height: 1em;
+    margin-inline: auto;
+  }
+  .yacht-footer__credits {
+    gap: var(--text-300);
+    text-align: right;
+  }
+
+  /* 404 */
+  .yacht-404 {
+    background-color: var(--color-ctp-red);
+    color: var(--color-ctp-mantle);
+    text-align: center;
+    padding-inline: var(--text-600);
+    height: 80%;
+  }
+
+  /* landing — :is() scoping fixes the global h2/h3 leak */
+  .yacht-landing {
+    text-align: justify;             /* see copyright note */
+    margin-inline: auto;
+    padding-inline: var(--text-600);
+  }
+  .yacht-landing__content :is(h1, h2, h3) { text-align: center; }
+
+  /* list titles */
+  .yacht-blog__list-title,
+  .yacht-project__list-title { text-align: center; }
+
+  /* pagination */
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 1em auto;
+    padding: 0;
+  }
+  .pagination .page-item {
+    border: 1px solid var(--color-ctp-overlay0);
+    flex: 1;
+    text-align: center;
+    width: 5em;
+  }
+  .pagination .page-link { display: block; text-decoration: none; }
+  .pagination > .page-item.active { background-color: var(--color-ctp-overlay0); }
+  .pagination > .page-item.active > .page-link { color: var(--color-ctp-subtext0); }
+  .pagination > .page-item.disabled > .page-link { color: var(--color-ctp-subtext1); }
+  @media (min-width: 48em) {
+    .pagination { width: 30%; }
+  }
+
+  /* ── Tufte structural blocks, Catppuccin paint ── */
+
+  .yacht-sidenote {
+    float: right;
+    clear: right;
+    width: min(14rem, 35vw);
+    margin-right: -17rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--font-base);
+    font-size: var(--text-300);
+    line-height: 1.4;
+    color: var(--color-ctp-subtext0);
+    vertical-align: baseline;
+    position: relative;
+  }
+
+  /* margin toggle: invisible driver, superscript-style toggle */
+  .yacht-sidenote-toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+  }
+  .margin-toggle {
+    display: none;
+    cursor: pointer;
+    font-family: var(--font-base);
+    font-size: 0.75rem;
+    color: var(--color-ctp-link);
+    vertical-align: super;
+  }
+
+  /* wide viewports: note floats into the margin, toggle hidden */
+  @media (min-width: 62em) {
+    .yacht-sidenote { display: block; }
+    .margin-toggle { display: none; }
+  }
+
+  /* narrow viewports: toggle reveals inline */
+  @media (max-width: 61.99em) {
+    .yacht-sidenote { display: none; }
+    .margin-toggle { display: inline; }
+    .yacht-sidenote-toggle:checked + .yacht-sidenote {
+      display: block;
+      float: none;
+      width: 100%;
+      margin: var(--spacing-m) 0;
+    }
+  }
+
+  .yacht-newthought {
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    font-family: var(--font-tufte);
+  }
+
+  .yacht-epigraph {
+    font-style: italic;
+    padding-inline-start: var(--spacing-l);
+    border-inline-start: 2px solid var(--color-ctp-mauve);
+  }
+
+  /* wide/full-bleed figures within the tufte measure */
+  .yacht-figure-wide {
+    max-width: none;
+    width: calc(100% + (2 * min(0px, ((100vw - var(--wrapper-max)) / 2))));
+  }
+}

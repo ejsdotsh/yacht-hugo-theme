@@ -1,41 +1,41 @@
-<div class="wrapper repel">
-  <!-- <div class="grid"> -->
+<div class="repel gap-6 sans text-sm text-ctp-subtext">
+
   <div class="yacht-footer__social cluster">
-    <ul>
-      {{ range .Site.Data.socialmedia.accounts }}
+    <ul role="list">
+      {{ range site.Data.socialmedia.accounts }}
       <li>
-        <a href="{{ .url }}">{{ .name }}</a>
+        <a class="hover:text-ctp-lavender transition-colors" href="{{ .url }}">{{ .name }}</a>
       </li>
       {{ end }}
     </ul>
   </div>
 
-  <div class="yacht-footer__disclaimer">
+  <div class="yacht-footer__disclaimer max-w-prose">
     all views expressed are my own; any and all art/artwork is copyright its respective owner (myself if not otherwise
     noted).
   </div>
 
   <div class="yacht-footer__copyright cluster">
-    <!-- baseURL/Title -->
-    <a href="{{ .Site.BaseURL }}">
-      {{ .Site.Title }}
-    </a>
-    copyright: &copy; {{ .Site.Params.copyrightFrom }}-present by {{ .Site.Params.author }},
-    and licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
-    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="Non-Commercial">
-    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Share Alike">
+    <a href="{{ site.BaseURL }}" class="hover:text-ctp-lavender transition-colors">{{ site.Title }}</a>
+    copyright: &copy; {{ site.Params.copyrightFrom }}-present by {{ site.Params.author }},
+    and licensed under <a class="underline decoration-ctp-lavender/50 underline-offset-4
+       hover:text-ctp-lavender transition-colors"
+       href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+    <span class="cluster gap-0.5" aria-hidden="true">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" class="inline size-4">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" class="inline size-4">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" class="inline size-4">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" class="inline size-4">
+    </span>
   </div>
 
-  <div class="yacht-footer__credits cluster">
+  <div class="yacht-footer__credits cluster text-xs">
     <p>powered by<br>
-      <a href="https://gohugo.io">Hugo</a>
+      <a class="hover:text-ctp-lavender transition-colors" href="https://gohugo.io">Hugo</a>
     </p>
     <p>themed with<br>
-      <a href="https://github.com/ejsdotsh/yacht">YACHT</a>
+      <a class="hover:text-ctp-lavender transition-colors" href="https://github.com/ejsdotsh/yacht">YACHT</a>
     </p>
   </div>
-  <!-- </div> -->
 
 </div>

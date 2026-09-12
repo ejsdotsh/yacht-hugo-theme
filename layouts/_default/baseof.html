@@ -1,21 +1,75 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode | default " en-us" }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ .Site.Language.LanguageCode | default "en-us" }}"
+  dir="{{ or .Site.Language.TextDirection `ltr` }}">
 
-{{- partial "head.html" . -}}
+<!-- {{- partial "head.html" . -}} -->
+<head>
+  <!--meta-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<body>
-  <a class="skip-link | button" href="#main-content">Skip to content</a>
-  <header role="banner" class="yacht-header">
-    {{- partial "header.html" . -}}
+  {{ with .Params.tags }}
+  <meta name="keywords" content="{{ delimit . ", " }}">
+  {{ end }}
+
+  {{ hugo.Generator }}
+
+  <meta name="author" content="{{ .Site.Params.author }}">
+
+  <meta name="description" content="
+    {{- with .Page.Description -}}
+      {{ . }}
+    {{- else -}}
+      {{ .Site.Params.description }}
+    {{- end -}}
+  ">
+
+  <!-- favicons -->
+  <link rel="manifest" href="{{ "favicons/site.webmanifest" | relURL }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicons/apple-touch-icon.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicons/favicon-32x32.png" | relURL }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
+
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+  {{ end }}
+
+  <!-- render any configured/available alternate formats -->
+  {{ range .AlternativeOutputFormats -}}
+  {{- $link := `
+  <link rel="%s" type="%s" href="%s" title="%s">` -}}
+  {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
+  {{- if $.Page.IsHome -}}
+  {{ $title = $.Site.Title }}
+  {{- end -}}
+  {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
+  {{- end }}
+
+  <title>
+    {{- if .Page.IsHome -}}
+    {{ .Site.Title }}
+    {{- else -}}
+    {{ .Site.Title }} -- {{ .Title }}
+    {{- end -}}
+  </title>
+
+</head>
+
+<body class="bg-ctp-base text-ctp-text font-et-book antialiased">
+  <a href="#main-content"
+     class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded
+            focus:bg-ctp-lavender focus:text-ctp-base focus:px-4 focus:py-2">Skip to content</a>
+
+  <header role="banner" class="yacht-header wrapper">
+    {{- partialCached "header.html" . -}}
   </header>
 
-  <main tabindex="-1" id="main-content" class="yacht-main">
-    {{- block "main" .}}{{- end }}
+  <main tabindex="-1" id="main-content" class="yacht-main wrapper py-12 focus:outline-none">
+    {{- block "main" . }}{{ end -}}
   </main>
 
-  <footer class="yacht-footer">
-    {{- partial "footer.html" . -}}
+  <footer class="yacht-footer wrapper mt-24 border-t border-ctp-mantle pt-6">
+    {{- partialCached "footer.html" . -}}
   </footer>
 </body>
 

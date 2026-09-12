@@ -1,15 +1,16 @@
-<!-- navigation -->
-<div class="repel">
-  <!-- baseURL/Title -->
-  <a class="yacht-header__logo" href="{{ .Site.BaseURL }}" aria-label="{{ .Site.Title }}">
-    {{ .Site.Title }}
+<div class="repel py-6">
+  <a class="yacht-header__logo font-et-book text-2xl font-normal hover:text-ctp-lavender transition-colors"
+     href="{{ site.BaseURL }}" aria-label="{{ site.Title }}">
+    {{ site.Title }}
   </a>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav role="navigation" aria-label="main navigation">
     <ul role="list" id="menu" class="cluster">
-      {{ range .Site.Menus.main.ByWeight }}
+      {{ range site.Menus.main.ByWeight }}
       <li>
-        <a href="{{ .URL | relURL }}" id="nav-link" title="{{ .Name }}">{{- .Name -}}</a>
+        <a href="{{ .URL | relURL }}" title="{{ .Name }}"
+           class="sans text-sm uppercase tracking-wide text-ctp-subtext
+                  hover:text-ctp-lavender transition-colors">{{ .Name }}</a>
       </li>
       {{ end }}
     </ul>

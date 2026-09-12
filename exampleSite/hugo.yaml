@@ -1,12 +1,41 @@
 baseURL: "https://ejsdotsh.github.io/yacht-hugo-theme/"
-languageCode: en-us
+locale: en-us
 title: "YACHT"
 subtitle: "YACHT Another Custom Hugo Theme"
 
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: 'assets/notwatching/hugo_stats\.json'
+    target: css
+  - source: '(postcss|tailwind)\.config\.js'
+    target: css
+
+hugoVersion:
+   min: "0.126.0"
+   extended: true
+
 module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json
   imports:
     - path: github.com/ejsdotsh/yacht-hugo-theme
       disable: false
+
+security:
+  exec:
+    allow:
+    - ^(dart-)?sass$
+    - ^go$
+    - ^git$
+    - ^node$
+    - ^postcss$
+    - ^tailwindcss$
 
 params:
   author: "e.j. sahala (they/them)"
