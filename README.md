@@ -26,7 +26,7 @@
 
 ### Requirements
 
-- Hugo ≥ 0.114.0
+- Hugo ≥ 0.166.0
 - Go (for module management)
 - NPM (to install Tailwind-CLI)
 - Tailwind-CLI
