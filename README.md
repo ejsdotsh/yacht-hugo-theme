@@ -84,7 +84,7 @@ markup:
 Then run:
 
 ```bash
-npm install
+npm install --save-dev tailwindcss @tailwindcss/cli @tailwindcss/typography
 
 hugo mod get -u ./...
 ```
