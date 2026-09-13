@@ -21,48 +21,71 @@
 - Mobile-first
 - Accessible
 - Responsive
-- Self-contained (have minimal external dependencies)
 
 ## Getting Your Own YACHT
-
-Once constructed, the preferred way of getting your own **YACHT** is by using **Hugo Modules**.
 
 ### Requirements
 
 - Hugo ≥ 0.114.0
 - Go (for module management)
-- TailwindCSS CLI
+- NPM (to install Tailwind-CLI)
+- Tailwind-CLI
 
 ### Configuration
 
-For `config.toml`:
-
-```toml
-[module]
-[[module.imports]]
-path = "github.com/ejsdotsh/yacht-hugo-theme"
-
-[markup]
-[markup.sass]
-embed = false
-```
-
-For `config.yaml`:
+In `hugo.yaml`:
 
 ```yaml
+  ...
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: 'assets/notwatching/hugo_stats\.json'
+    target: css
+  - source: '(postcss|tailwind)\.config\.js'
+    target: css
+
+hugoVersion:
+   min: "0.166.0"
+   extended: true
+
 module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json
   imports:
-    - path: "github.com/ejsdotsh/yacht-hugo-theme"
+    - path: github.com/ejsdotsh/yacht-hugo-theme
       disable: false
 
+security:
+  exec:
+    allow:
+    - ^(dart-)?sass$
+    - ^go$
+    - ^git$
+    - ^node$
+    - ^postcss$
+    - ^tailwindcss$
+
 markup:
-  sass:
-    embed: false
+  goldmark:
+    renderer:
+      unsafe: true
+  duplicateResourceFiles: true
+
+  ...
 ```
 
 Then run:
 
 ```bash
+npm install
+
 hugo mod get -u ./...
 ```
 
