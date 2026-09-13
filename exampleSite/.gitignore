@@ -5,6 +5,8 @@
 !go.mod
 !go.sum
 
+!/.nojekyll
+
 !/.gitignore
 !hugo.yaml
 !*/**.yaml
@@ -16,3 +18,9 @@
 !data/**
 !static/**
 
+!package.json
+
+# ignore
+node_modules/
+resources/
+public/

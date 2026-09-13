@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ or site.Language.LanguageCode | default " en-us" }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<html lang="{{ .Site.Language.Locale | default "en-us" }}"
+  dir="{{ .Site.Params.textDirection | default "ltr" }}">
 
 {{- partial "head.html" . -}}
 
-<body>
-  <a class="skip-link | button" href="#main-content">Skip to content</a>
-  <header role="banner" class="yacht-header">
-    {{- partial "header.html" . -}}
+<body class="bg-ctp-base text-ctp-text font-et-book antialiased">
+  <a href="#main-content"
+     class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded
+            focus:bg-ctp-lavender focus:text-ctp-base focus:px-4 focus:py-2">Skip to content</a>
+
+  <header role="banner" class="yacht-header wrapper">
+    {{- partialCached "header.html" . -}}
   </header>
 
-  <main tabindex="-1" id="main-content" class="yacht-main">
-    {{- block "main" .}}{{- end }}
+  <main tabindex="-1" id="main-content" class="yacht-main wrapper py-12 focus:outline-none">
+    {{- block "main" . }}{{ end -}}
   </main>
 
-  <footer class="yacht-footer">
-    {{- partial "footer.html" . -}}
+  <footer class="yacht-footer wrapper mt-24 border-t border-ctp-mantle pt-6">
+    {{- partialCached "footer.html" . -}}
   </footer>
 </body>
 

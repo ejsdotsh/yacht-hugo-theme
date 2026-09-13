@@ -1,30 +1,27 @@
 {{ define "main" }}
-<!-- <div class="radius stack"> -->
-<div class="radius wrapper stack yacht-project__list">
-
+<div class="rounded-lg wrapper stack yacht-project__list">
   <div class="yacht-project__list-title">
     <h2>{{ .Title }}</h2>
   </div>
 
-  <div class="wrapper yacht-project__list-item">
-    {{ with .Site.GetPage "/oss.md" }}
+  {{ with site.GetPage "/oss.md" }}
+  <div class="yacht-project__list-item">
     <p>{{ .Summary }}</p>
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-    {{ end }}
   </div>
+  {{ end }}
 
-  <div class="wrapper yacht-project__list-projects">
+  <div class="yacht-project__list-content">
     {{ .Content }}
   </div>
 
-  <div class="wrapper grid">
+  <div class="grid">
     {{ range .Pages }}
-    <div class="radius wrapper yacht-project__list-item">
+    <div class="rounded-lg stack yacht-project__list-item">
       <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
       <p>{{ .Summary }}</p>
     </div>
     {{ end }}
   </div>
-
 </div>
 {{ end }}

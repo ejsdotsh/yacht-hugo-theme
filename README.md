@@ -1,8 +1,6 @@
-# YACHT — Another Custom Hugo Theme
+# YACHT Another Custom Hugo Theme
 
-> When graduating from high school, I was voted *"most likely to own a yacht"* by my senior class. I don't think this is what they meant...
-
-**YACHT** = **Y**ACHT **A**nother **C**ustom **H**ugo **T**heme
+> **Under Construction** — this theme is sometimes being actively developed; breaking changes ahead
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ejsdotsh/yacht-hugo-theme/hugo.yaml?branch=main&logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/workflows)
 [![Latest Release](https://img.shields.io/github/v/release/ejsdotsh/yacht-hugo-theme?logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/releases)
@@ -13,6 +11,8 @@
 
 ---
 
+> When graduating from high school, I was voted *"most likely to own a yacht"* by my senior class. I don't think this is what they meant...
+
 ## What Is YACHT?
 
 **YACHT** is a punny and recursively named theme for the [Hugo](https://gohugo.io) static site generator which uses the [Catppuccin Palettes](https://github.com/catppuccin/palette) and aims to be:
@@ -21,52 +21,71 @@
 - Mobile-first
 - Accessible
 - Responsive
-- Minimal external dependencies
-
-> **Under Construction** — this theme is sometimes being actively developed; breaking changes ahead
 
 ## Getting Your Own YACHT
 
-Once constructed, the preferred way of getting your own **YACHT** is by using **Hugo Modules**.
-
-Please note that with the pending removal of the embedded libsass transpiler in Hugo, an external installion (not covered) of Dart Sass is required.
-
 ### Requirements
 
-- Hugo ≥ 0.114.0
+- Hugo ≥ 0.166.0
 - Go (for module management)
-- Dart Sass
+- NPM (to install Tailwind-CLI)
+- Tailwind-CLI
 
 ### Configuration
 
-For `config.toml`:
-
-```toml
-[module]
-[[module.imports]]
-path = "github.com/ejsdotsh/yacht-hugo-theme"
-
-[markup]
-[markup.sass]
-embed = false
-```
-
-For `config.yaml`:
+In `hugo.yaml`:
 
 ```yaml
+  ...
+
+build:
+  buildStats:
+    enable: true
+  cachebusters:
+  - source: 'assets/notwatching/hugo_stats\.json'
+    target: css
+  - source: '(postcss|tailwind)\.config\.js'
+    target: css
+
+hugoVersion:
+   min: "0.166.0"
+   extended: true
+
 module:
+  mounts:
+  - source: assets
+    target: assets
+  - disableWatch: true
+    source: hugo_stats.json
+    target: assets/notwatching/hugo_stats.json
   imports:
-    - path: "github.com/ejsdotsh/yacht-hugo-theme"
+    - path: github.com/ejsdotsh/yacht-hugo-theme
       disable: false
 
+security:
+  exec:
+    allow:
+    - ^(dart-)?sass$
+    - ^go$
+    - ^git$
+    - ^node$
+    - ^postcss$
+    - ^tailwindcss$
+
 markup:
-  sass:
-    embed: false
+  goldmark:
+    renderer:
+      unsafe: true
+  duplicateResourceFiles: true
+
+  ...
 ```
 
 Then run:
 
 ```bash
+npm install
+
 hugo mod get -u ./...
 ```
 

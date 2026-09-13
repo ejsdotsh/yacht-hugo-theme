@@ -1,13 +1,10 @@
 {{ define "main" }}
-<div class="wrapper radius stack | yacht-default">
-
-  <div class="yacht-default__single-header">
+<article class="wrapper rounded-lg stack yacht-default">
+  <header class="yacht-default__single-header">
     <h2>{{ .Title }}</h2>
-  </div>
-
-  <div class="yacht-default__single-content">
+  </header>
+  <div class="yacht-default__single-content font-tufte">
     {{ .Content }}
   </div>
-
-</div>
+</article>
 {{ end }}
