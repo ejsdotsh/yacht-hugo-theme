@@ -2,7 +2,7 @@
 
   <div class="yacht-footer__social cluster">
     <ul role="list">
-      {{ range site.Data.socialmedia.accounts }}
+      {{ range hugo.Data.socialmedia.accounts }}
       <li>
         <a class="hover:text-ctp-lavender transition-colors" href="{{ .url }}">{{ .name }}</a>
       </li>

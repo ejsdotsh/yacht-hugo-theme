@@ -7,8 +7,6 @@
   <meta name="keywords" content="{{ delimit . ", " }}">
   {{ end }}
 
-  {{ hugo.Generator }}
-
   <meta name="author" content="{{ .Site.Params.author }}">
 
   <meta name="description" content="
@@ -25,9 +23,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicons/favicon-32x32.png" | relURL }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicons/favicon-16x16.png" | relURL }}">
 
-  {{ with (templates.Defer (dict "key" "global")) }}
-    {{ partial "css.html" . }}
-  {{ end }} 
   <!-- render any configured/available alternate formats -->
   {{ range .AlternativeOutputFormats -}}
   {{- $link := `
@@ -46,5 +41,10 @@
     {{ .Site.Title }} -- {{ .Title }}
     {{- end -}}
   </title>
+
+  {{ with (templates.Defer (dict "key" "global")) }}
+    {{ partial "css.html" . }}
+  {{ end }}
+
 
 </head>

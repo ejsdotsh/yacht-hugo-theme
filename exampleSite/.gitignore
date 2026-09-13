@@ -16,3 +16,7 @@
 !data/**
 !static/**
 
+!package.json
+
+# ignore
+node_modules/

@@ -2,9 +2,6 @@
 
 > **Under Construction** — this theme is sometimes being actively developed; breaking changes ahead
 
-<!-- **YACHT** = **Y**ACHT **A**nother **C**ustom **H**ugo **T**heme -->
-
-
 [![Build Status](https://img.shields.io/github/actions/workflow/status/ejsdotsh/yacht-hugo-theme/hugo.yaml?branch=main&logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/workflows)
 [![Latest Release](https://img.shields.io/github/v/release/ejsdotsh/yacht-hugo-theme?logo=github)](https://github.com/ejsdotsh/yacht-hugo-theme/releases)
 [![License](https://img.shields.io/github/license/ejsdotsh/yacht-hugo-theme?color=blue)](LICENSE)

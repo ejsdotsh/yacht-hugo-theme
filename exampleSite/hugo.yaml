@@ -13,7 +13,7 @@ build:
     target: css
 
 hugoVersion:
-   min: "0.126.0"
+   min: "0.166.0"
    extended: true
 
 module:
@@ -37,6 +37,12 @@ security:
     - ^postcss$
     - ^tailwindcss$
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  duplicateResourceFiles: true
+ 
 params:
   author: "e.j. sahala (they/them)"
   description: "YACHT Another Custom Hugo Theme - a punny and recursively named theme for the Hugo static site generator."

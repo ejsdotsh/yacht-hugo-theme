@@ -1,17 +1,18 @@
 ---
 title: "YACHT Another Custom Hugo Theme"
+drafts: false
 ---
-## under construction
 
-when graduating from high school, i was voted *"most likely to own a yacht"* by my senior class. i don't think this is
-what they meant...
+### Under Construction
 
-### **YACHT** **A**nother **C**ustom **H**ugo **T**heme
+**YACHT** **A**nother **C**ustom **H**ugo **T**heme
 
-***YACHT*** is a punny and recursively named theme for the [Hugo][1] static site generator which uses the [Catppuccin
-Palettes][2] and aims to be simple, mobile-first, accessible, responsive, and to have minimal external dependencies.
+**This theme is sometimes being actively developed; breaking changes ahead**
 
-### ***under construction***
+When graduating from high school, I was voted *"most likely to own a yacht"* by my senior class. I don't think this is what they meant...
 
-[1]: <https://gohugo.io> "Hugo"
-[2]: <https://github.com/catppuccin/palette> "Catppuccin Palettes"
+## What Is YACHT?
+
+**YACHT** is a punny and recursively named theme for the [Hugo](https://gohugo.io) static site generator which uses the [Catppuccin Palettes](https://github.com/catppuccin/palette).
+
+### Under Construction
