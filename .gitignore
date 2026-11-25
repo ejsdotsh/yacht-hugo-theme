@@ -26,7 +26,7 @@
 
 # npm & webpack
 !package.json
-!package-lock.json
+!bun.lock
 !packages/**
 
 # theme components

@@ -30,7 +30,6 @@ module:
 security:
   exec:
     allow:
-    - ^(dart-)?sass$
     - ^go$
     - ^git$
     - ^node$

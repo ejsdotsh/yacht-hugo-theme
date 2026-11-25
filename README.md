@@ -28,8 +28,14 @@
 
 - Hugo ≥ 0.166.0
 - Go (for module management)
-- NPM (to install Tailwind-CLI)
-- Tailwind-CLI
+- Bun (for package management — installs the Tailwind CSS CLI)
+- Node.js ≥ 22.15.0 (required by Hugo to execute the Tailwind CSS CLI — see note below)
+
+> **Note — Node.js is required even though Bun is used for package management.**
+> Hugo's `css.TailwindCSS` always invokes the Tailwind CSS CLI via `node` (never `bun`),
+> and it injects an ESM loader that requires `module.registerHooks`, available since
+> Node.js 22.15.0. Bun cannot run this step, so Bun is used only for installing and
+> managing packages; Node.js remains the runtime for the build.
 
 ### Configuration
 
@@ -65,7 +71,6 @@ module:
 security:
   exec:
     allow:
-    - ^(dart-)?sass$
     - ^go$
     - ^git$
     - ^node$
@@ -84,7 +89,7 @@ markup:
 Then run:
 
 ```bash
-npm install --save-dev tailwindcss @tailwindcss/cli @tailwindcss/typography
+bun add -d tailwindcss @tailwindcss/cli @tailwindcss/typography
 
 hugo mod get -u ./...
 ```
