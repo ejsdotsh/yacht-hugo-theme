@@ -49,7 +49,6 @@ module:
 security:
   exec:
     allow:
-    - ^(dart-)?sass$
     - ^go$
     - ^git$
     - ^node$
@@ -67,8 +66,8 @@ markup:
 
 then run:
 
-```txt
-npm install --save-dev tailwindcss @tailwindcss/cli @tailwindcss/typography
+```bash
+bun add -d tailwindcss @tailwindcss/cli @tailwindcss/typography
 
 hugo mod get -u ./...
 ```
@@ -78,7 +77,7 @@ hugo mod get -u ./...
 ## references
 
 * [Catppuccin](https://github.com/catppuccin/catppuccin)
-* [PureCSS](https://purecss.io)
+* [TailwindCSS](https://tailwindcss.com)
 * Brian P. Hogan's [Build Websites with Hugo](https://pragprog.com/titles/bhhugo/build-websites-with-hugo)
 * Lorenze Setale's [My Hugo blog now is fast and light](https://blog.setale.me/2022/01/31/My-Hugo-blog-now-is-fast-and-light/)
 * Atishay Jain's [Hugo in Action](https://www.manning.com/books/hugo-in-action)
